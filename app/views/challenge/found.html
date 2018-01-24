@@ -1,0 +1,70 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Pay a Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+  <div class="grid-row">
+    <div class="column-full">
+      <div class="phase-banner">
+          <p>
+            <strong class="phase-tag">ALPHA</strong>
+            <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+          </p>
+        </div>
+    </div>
+  </div>
+    
+  <div class="grid-row">
+    
+    <div class="column-two-thirds">
+      
+      <div class="done-panel">
+        <h1 class="heading-large"><span id="done-tick"> </span>Thank you</h1>
+        <h2 class="heading-large"> You do not have to pay any charges.</h2>
+      </div>
+            
+      <p>
+       We have matched your exemption based on the additional details you have provided.
+      </p>
+        
+        <p>Penalty Charge Notice {{ref}} has now been cancelled.</p>
+      
+      <h3 class="heading-medium">
+        How to avoid a future Penalty Charge Notice
+      </h3>
+      
+      <ul class="list list-bullet">
+        <li>
+          Make sure your GP, dentist, any benefits organisations have your correct name and address.
+        </li>
+        <li>
+          If you have an exemption certificate make a note of the expiry date. If it has expired do not continue to claim.
+        </li>
+
+      </ul>
+      
+      <ul class="list options-list">
+        <li><a class="icon print-icon" href="javascript:window.print();">Print this page</a></li>
+      </ul>
+    
+  <h2 class="heading-medium">Feedback</h2>
+  
+  <p>
+    Leaving feedback only takes five minutes. Your comments are extremely helpful and will help us to provide a better service.
+  </p>
+  <p>
+    <a class="" href="feedback">Leave feedback</a>
+  </p> 
+      
+      </div>
+    
+  </div>
+
+</main>
+
+{% endblock %}

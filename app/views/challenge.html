@@ -1,0 +1,172 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Pay or challenge a Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+  <p>
+    <a href="/"> Back to all prototypes</a>
+  </p>
+  
+  <h1 class="heading-xlarge">Penalty Charge Notices</h1>
+  
+  <details>
+
+    <summary><span class="summary">Notes on how the prototype works</span></summary>
+
+    <div>
+      
+      <p>
+        November 2017 - The prototype currently handles all scenarios except universal credit or war pensions. The references below show the most common journeys.
+      </p>
+
+      <p>1. PCN Numbers:<br> Enter a PCN number (from the list below) or leave blank to view Michelle Doe's penalty info.</p>
+      <p>
+        2. Exemption reference numbers:<br> 
+        When asked for an exemption certificate number enter one of the following:</p>
+      <p>
+        1. Match - "found" <br> 
+        2. Info is different - "we need to contact you about the difference in information" <br> 
+        3. Out of date - "certificate out of date"<br> 
+        4. cant find - "we cant find your certificate"
+      </p>
+      
+<!--      <p>3. Change of details:<br> For MVP, if 2 or more personal details are changed or do not match, the user will need to be contacted to verify the change.</p>      -->
+      
+      <h2 class="heading-small">PCN Numbers</h2>
+      
+      <table>
+                  <tr>
+          <td>Bill Smith</td>
+          <td>123456789</td>
+          <td>MEDEX</td>
+        </tr>
+        <tr>
+          <td>Michelle Doe</td>
+          <td>234567891</td>
+          <td>MATEX</td>
+        </tr>
+        <tr>
+          <td>Imran Eid</td>
+          <td>345678910</td>
+          <td>PPC</td>
+        </tr>
+                  <tr>
+          <td>Max Payne</td>
+          <td>825478319</td>
+          <td>Tax Creds</td>
+        </tr>
+        <tr>
+          <td>Karren Jones</td>
+          <td>567891011</td>
+          <td>JSA</td>
+        </tr>
+        <tr>
+          <td>Larry Hat</td>
+          <td>901011121</td>
+          <td>ESA</td>
+        </tr>
+
+      </table>
+      <hr>
+
+    </div>
+    
+  </details>
+
+
+  <h2 class="heading-large">Challenge Prototypes</h2>
+    
+      <ul class="list list-bullet">
+    <li><a href="challenge/start">Version 6 - February 2018</a></li>
+  </ul>
+    
+      <hr>
+    
+          <h3 class="heading-small">Version 5 - January 2018</h3>
+  
+  <p>
+    <span class="strong">What we tested</span> - Testing improved content that aims to give the user more context and to be more reassuring.
+  </p>
+      
+  <ul class="list list-bullet">
+                <li><a href="/public/images/prototypes/challenge/NHSFound.pdf">Journey Where a user enters their exemption reference number and a match is found</a></li>
+          <li><a href="/public/images/prototypes/challenge/NHSPartial.pdf">Journey Where a user enters their exemption reference number but only a partial match is found</a></li>
+                <li><a href="/public/images/prototypes/challenge/NHSnotFound.pdf">Journey Where a user enters their exemption reference number and no match is found</a></li>
+          <li><a href="/public/images/prototypes/challenge/dwpProof.pdf">Journey where a user declares they have a DWP benefit but also has a BSA exemption</a></li>
+  </ul>
+  
+  <hr>
+    
+      <h3 class="heading-small">Version 4 - December 2017</h3>
+  
+  <p>
+    <span class="strong">What we tested</span> - Journey where a user declares they have a DWP benefit but also has a BSA exemption and the journey where a user enters their BSA exemption number but only a partial match is found.
+  </p>
+      
+  <ul class="list list-bullet">
+          <li><a href="/public/images/prototypes/challenge/v4-a.pdf">Journey where a user declares they have a DWP benefit but also has a BSA exemption</a></li>
+    <li><a href="/public/images/prototypes/challenge/v4.pdf">Journey Where a user enters their exemption reference number but only a partial match is found</a></li>
+  </ul>
+  
+  <hr>
+  
+  <h3 class="heading-small">Version 3 - November 2017</h3>
+  
+  <p>
+    <span class="strong">What we tested</span> - Journey where a user amends details or gives us a reference number, but the details don't match. Journey where a user needs to send us proof of a benefit.
+  </p>
+    
+  <ul class="list list-bullet">
+    <li>
+      <a href="/public/images/prototypes/challenge/v3-2.pdf">
+        Has a reference for their Medical Exemption - but the details don't match the prescription details.
+      </a>
+    </li>
+    <li>
+      <a href="/public/images/prototypes/challenge/v3-uc.pdf">
+        We need proof of your entitlement to universal credit
+      </a>
+    </li>
+    <!--
+<li><a href="/public/images/prototypes/challenge/v2-c.pdf">Actually has Tax Credits with a reference number</a></li>
+-->
+  </ul>
+  
+  <hr>
+  
+  <h3 class="heading-small">Version 2 - September/October 2017</h3>
+  
+  <p>
+    <span class="strong">What we tested</span> - Simple journey where a user amends details or gives us a reference number for an exemption certificate.
+  </p>
+    
+  <ul class="list list-bullet">
+    <li><a href="/public/images/prototypes/challenge/v2-a.pdf">Simple maternity exemption confirmed</a></li>
+    <li><a href="/public/images/prototypes/challenge/v2-b.pdf">Pregnant but has no certificate</a></li>
+    <li><a href="/public/images/prototypes/challenge/v2-c.pdf">Actually has Tax Credits with a reference number</a></li>
+  </ul>
+  
+  <hr>
+  
+  <h3 class="heading-small">Version 1 - Early September 2017</h3>
+  
+  <p>
+    <span class="strong">What we tested</span> - Version 1 of the challenge journey was created as a proof of concept to investigate the feasibility of challenging a penalty charge online.
+  </p>
+    
+  <ul class="list list-bullet">
+    <li><a href="/public/images/prototypes/challenge/v1-a.pdf">Simple maternity exemption confirmed</a></li>
+    <li><a href="/public/images/prototypes/challenge/v1-b.pdf">Pregnant but has no certificate</a></li>
+    <li><a href="/public/images/prototypes/challenge/v1-c.pdf">Actually has Tax Credits with a reference number</a></li>
+    <li><a href="/public/images/prototypes/challenge/v1-d.pdf">Has Tax Credits with new details</a></li>
+    <li><a href="/public/images/prototypes/challenge/v1-e.pdf">User gives no new details</a></li>
+  </ul>
+  
+</main>
+
+{% endblock %}

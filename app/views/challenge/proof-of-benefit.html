@@ -1,0 +1,89 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Pay a Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+      <div class="grid-row">
+      <div class="column-full">
+        <div class="phase-banner">
+            <p>
+              <strong class="phase-tag">ALPHA</strong>
+              <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+            </p>
+          </div>
+      </div>
+    </div>
+
+    <div class="grid-row">
+    
+    <div class="column-two-thirds">
+         
+    <h1 class="heading-large">We need proof you were receiving {{title}} between {{checkdate}}</h1>
+          
+      
+      <p>You will need to send us a copy of either:</p>
+      
+      <ul class="list list-bullet">
+        <li>an {{title}} letter</li>
+        <li>a letter from the Department of Work and Pensions</li>
+        <li>a letter from the Jobcentre</li>
+      </ul>
+        
+      <p>Your penalty charge notice is on hold for 10 days.</p>
+            
+      <h2 class="heading-large">How to send proof</h2>
+      
+      <h3 class="heading-small">
+        It’s as easy as sending a photo on your phone
+      </h3>
+      
+      <p>If you have access to a digital camera or a mobile phone with a camera, you can take a digital photo of your proof. Make sure the image you have taken is clear and send it as an email attachment.</p>
+        
+
+	<p>Send the image to our email address. You must include your Penalty Charge Notice reference number 01234567890 in the email.</p>
+        
+
+	      <ul class="list list-bullet">
+              {% if (ticked == 'K') %}
+        <li><a href="#">nhsbsa.decs@nhsbsa.nhs.uk</a></li>
+              {% else %}
+        <li><a href="#">nhsbsa.pecs@nhsbsa.nhs.uk</a></li>
+            {% endif %}
+      </ul>
+        
+        	<p>If you have access to a scanner, we will also accept a scanned image of your proof sent as an email attachment.</p>
+      
+      <h3 class="heading-small">
+        To send your proof by post
+      </h3>
+      
+      <p>Post a photocopy of your proof, including your penalty charge reference number {{ref}}, to:</p>
+        <p>
+                          {% if (ticked == 'K') %}
+        Dental Charges Team<br>
+              {% else %}
+        Penalty Charges team<br> 
+            {% endif %}
+          Bridge House<br> 
+          152 Pilgrim Street<br> 
+          Newcastle upon Tyne<br> 
+          NE1 6SN
+        </p>
+      
+      <h2 class="heading-large">What happens next</h2>
+
+      <p>
+Once we receive your proof we will check it and then contact you with a response. If you email your proof, we will contact you within 2 working days. If you send it by post, it will be within 5 working days. No additional charges will be added during this time.</p>
+
+      
+      </div>       
+    </div>
+    
+</main>
+
+{% endblock %}

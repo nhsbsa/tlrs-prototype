@@ -1,0 +1,190 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Pay a Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <!--div class="column-two-thirds">
+
+    <div class="details">
+      <h2 class="heading-medium">Pre-paymentetails</h2>
+      <p class="valid">Valid dates</p>
+      <h2 class="heading-medium bignumbers"><span>from:</span> 20 June 2016</h2>
+      <h2 class="heading-medium bignumbers"><span>to:</span> 21 June 2017</h2>
+    </div>
+    </div-->
+
+    <div class="column-two-thirds">
+
+      <!-- <div class="done-panel">
+
+        <h1 class="heading-large"><span id="done-tick"> </span>Done</h1>
+        <h2 class="heading-medium">Thank you. You have paid £{{payment}} from Penalty Charge Notice number {{pcnnumber}}</h2>
+
+      </div> -->
+
+      <h1 class="heading-large">Payment receipt</h1>
+
+      <p>Dear Jane Doe,</p>
+
+      <p>Thank you for your payment towards Penalty Charge Notice number 123456789.</p>
+
+      <p>The summary of your payment is below:</p>
+
+      <h3 class="heading-medium">Payment Details</h3>
+
+      <!-- <div class="info-table">
+        <p>Dental Exemption charges: <span class="">£{{originalbalance}}</span></p>
+        <p>Dental Exemption charges: <span class="">£{{totalpayments}}</span></p>
+        <p>Total amount: <span class="strong">£{{newbalance}}</span></p>
+      </div> -->
+
+      <!-- <div class="info-table">
+        <p>Dental Exemption charges: <span class="">£10</span></p>
+        <p>Dental Exemption charges: <span class="">£20</span></p>
+        <p>Total amount: <span class="strong">£30</span></p>
+      </div> -->
+
+      <table>
+        <tr>
+          <th>Transaction ID</th>
+          <th>Description</th>
+          <th></th>
+          <th>Amount</th>
+        </tr>
+        <tr>
+          <td>452-169</td>
+          <td>
+            <p>Dental Exemption Charges</p>
+            <p>520874250522</p>
+          </td>
+          <td></td>
+          <td>10.00</td>
+        </tr>
+        <tr>
+          <td>452-170</td>
+          <td>
+            <p>Dental Exemption Charges</p>
+            <p>520874235622</p>
+          </td>
+          <td></td>
+          <td>20.00</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Total</td>
+          <td>
+
+          </td>
+          <td class="bold-number">
+            30.00
+          </td>
+        </tr>
+      </table>
+
+      <br>
+
+      <h3 class="heading-medium">
+          Amount still to pay: £28
+      </h3>
+
+      <table>
+        <th></th>
+      </table>
+
+      <!-- <p>You now have £28 to pay on Penalty Charge Notice 123456789.</p> -->
+
+      <!-- <h3 class="heading-medium">Payment Details</h3> -->
+
+      <!-- <div class="info-table"> -->
+        <!-- <p>Unique Transaction ID: <span class="strong">GEW5LET33222</span></p>
+        <p>Payment Reference: <span class="strong">452-171</span></p> -->
+        <!-- <p>Payment Service Provider ID: <span class="strong">K8T2R77B94ZB</span></p> -->
+        <!-- <p>Card Number: <span class="strong">************6721</span></p>
+        <p>Card Holder: <span class="strong">Fred Smith</span></p>
+        <p>Authorisation Code: <span class="strong">102903</span></p> -->
+        <!-- <p>Email Address: <span class="strong">mark.robertson5@nhs.net</span></p> -->
+        <!-- <p>Merchant Number: <span class="strong">12345678</span></p> -->
+      <!-- </div> -->
+
+      <!-- <hr></hr> -->
+
+
+
+
+
+      <h3 class="heading-medium">
+        How to avoid penalties in the future
+      </h3>
+
+      <ul class="list list-bullet">
+        <li>
+          Make sure that your GP surgery, dental practice, benefits organisations and the NHS Business Services Authority have your correct name and home address, so that your details match.
+        </li>
+        <li>
+          If you have an NHS exemption certificate (medical or maternity), make sure it does not expire.
+        </li>
+	     <li>
+         If you are entitled to claim free prescriptions make sure that you tick the correct box on the back on the prescription.
+        </li>
+        <li>
+          Make sure that you tick the correct box on the dental patient declaration form when claiming free or reduced cost NHS dental services.
+        </li>
+      </ul>
+
+        <!-- <p>
+          <a class="" href="number">Make another payment</a>
+        </p> -->
+
+      <h2 class="heading-medium">Help towards your NHS health costs</h2>
+
+      <p>Find out more about the options available and how you can apply:</p>
+
+      <ul class="list list-bullet">
+        <li><a href="https://www.nhsbsa.nhs.uk/exemption-certificates">Exemption certificates</a></li>
+        <li><a href="https://www.nhsbsa.nhs.uk/nhs-low-income-scheme">NHS Low Income Scheme</a></li>
+        <li><a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates">Prescription prepayment certificates </a></li>
+      </ul>
+
+<!-- <p>
+    If you don’t have an exemption certificate at the moment, you can check whether you qualify:
+  </p>
+
+  <ul class="list list-bullet">
+    <li>
+      <a class="" href="https://www.nhsbsa.nhs.uk/exemption-certificates">Exemption certificates</a>
+    </li>
+  </ul>
+
+
+  <p>If you don’t qualify for free NHS prescriptions or dental treatment there are a number of options to reduce your costs:</p>
+
+  <ul class="list list-bullet">
+    <li>
+      <a class="" href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates">Prescription prepayment certificates </a>
+    </li>
+    <li>
+      <a class="" href="https://www.nhsbsa.nhs.uk/nhs-low-income-scheme">NHS Low Income Scheme</a>
+    </li>
+  </ul> -->
+
+  <p><a href="https://services.nhsbsa.nhs.uk/check-for-help-paying-nhs-costs/start">Use our eligibility tool</a> to see if you qualify for free or reduced cost NHS prescriptions or dental treatment.</p>
+
+  <hr>
+
+  <p class="small-text">NHS Penalty Charge Notices are issued in accordance with the NHS (Penalty Charge) Regulations 1999. The NHS Business Services Authority (NHSBSA) works on behalf of the NHS to check claims for free prescriptions and recover charges from patients who incorrectly claim they do not have to pay. This is done to protect public funds and provide best value for money for the taxpayer. </p>
+
+    </div>
+
+  </div>
+
+  <p id="usermail"class="visually-hidden">{{hasmail}}</p>
+
+</main>
+
+{% endblock %}

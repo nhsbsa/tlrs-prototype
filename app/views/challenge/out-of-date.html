@@ -1,0 +1,56 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Pay a Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+  <div class="grid-row">
+    <div class="column-full">
+      <div class="phase-banner">
+          <p>
+            <strong class="phase-tag">ALPHA</strong>
+            <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+          </p>
+        </div>
+    </div>
+  </div>
+
+  <div class="grid-row">
+    
+    <div class="column-two-thirds">
+         
+    <h1 class="heading-large">
+     Your {{title}} expired on 31 September 2017.
+    </h1>
+<!--
+    <h1 class="heading-large">
+      Your {{title}} did not cover you between {{checkdate}}
+    </h1>
+-->
+                  
+      <h3 class="heading-medium">How to close this Penalty Charge Notice</h3>
+      
+      <p>
+       You have 2 choices:
+      </p>
+      
+      <ul class="list list-bullet">
+        <li>
+          <a href="">pay the total of £51.60.</a> You can pay in one payment or in instalments.
+        </li>
+        <li>
+          <a href="">provide proof you were entitled to collect free prescriptions between {{checkdate}}</a>
+        </li>
+      </ul>
+       
+    </div>
+    
+  </div>
+
+</main>
+
+{% endblock %}

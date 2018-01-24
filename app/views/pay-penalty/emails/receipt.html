@@ -1,0 +1,188 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Pay a Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+
+    <div class="column-two-thirds">
+
+
+      <h1 class="heading-large">Payment receipt</h1>
+
+      <p>Dear Jane Doe,</p>
+
+      <p>Thank you for your payment towards Penalty Charge Notice number 123456789.</p>
+
+      <p>The summary of your payment is below:</p>
+
+      <h3 class="heading-medium">Payment Details</h3>
+
+      <table>
+        <tr>
+
+          <th>Description</th>
+          <th></th>
+          <th>Amount</th>
+        </tr>
+        <tr>
+          <td>
+            <p>Prescription penalty charge</p>
+          </td>
+          <td></td>
+          <td>£60</td>
+        </tr>
+        <tr>
+          <td>
+            <p>Prescription</p>
+          </td>
+          <td></td>
+          <td>£8</td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td>
+
+          </td>
+          <td class="bold-number">
+            £68
+          </td>
+        </tr>
+      </table>
+
+      <br>
+
+            <h3 class="heading-medium">
+          Amount paid: £17
+      </h3>
+
+      <table>
+        <th></th>
+      </table>
+
+
+            <h3 class="heading-medium">Payment Schedule</h3>
+
+      <p>
+        This is a schedule of your payments. Click the links below to make payments. You can also choose to pay the remaining amount in full now
+      </p>
+
+    <div class="review">
+
+
+
+                        <div class="review-row">
+        <div>
+          <p>First payment made on 26/09/2017</p>
+        </div>
+        <div>
+          <p>£17</p>
+        </div>
+                          <div >
+                            <img class="tick" align="middle" src="https://services.nhsbsa.nhs.uk/check-for-help-paying-nhs-costs/images/tick-green.svg"><img>
+                          </div>
+
+      </div>
+
+
+                  <div class="review-row">
+        <div>
+          <p>Next payment due on 26/10/2017</p>
+        </div>
+        <div>
+          <p>£17</p>
+        </div>
+
+
+      </div>
+
+                        <div class="review-row">
+        <div>
+          <p>Payment due on 26/11/2017</p>
+        </div>
+        <div>
+          <p>£17</p>
+        </div>
+
+
+      </div>
+
+                              <div class="review-row">
+        <div>
+          <p>Final payment due on 26/12/2017</p>
+        </div>
+        <div>
+          <p>£17</p>
+        </div>
+
+
+      </div>
+                                          <div class="review-row">
+        <div>
+          <p>Amount Remaining</p>
+        </div>
+        <div>
+          <p>£51</p>
+        </div>
+                                                                <div>
+
+                    </div>
+
+      </div>
+
+    </div>
+
+
+
+
+      <h3 class="heading-medium">
+        How to avoid penalties in the future
+      </h3>
+
+      <ul class="list list-bullet">
+        <li>
+          Make sure that your GP surgery, dental practice, benefits organisations and the NHS Business Services Authority have your correct name and home address, so that your details match.
+        </li>
+        <li>
+          If you have an NHS exemption certificate (medical or maternity), make sure it does not expire.
+        </li>
+	     <li>
+         If you are entitled to claim free prescriptions make sure that you tick the correct box on the back on the prescription.
+        </li>
+        <li>
+          Make sure that you tick the correct box on the dental patient declaration form when claiming free or reduced cost NHS dental services.
+        </li>
+      </ul>
+
+      <h2 class="heading-medium">Help towards your NHS health costs</h2>
+
+      <p>Find out more about the options available and how you can apply:</p>
+
+      <ul class="list list-bullet">
+        <li><a href="https://www.nhsbsa.nhs.uk/exemption-certificates">Exemption certificates</a></li>
+        <li><a href="https://www.nhsbsa.nhs.uk/nhs-low-income-scheme">NHS Low Income Scheme</a></li>
+        <li><a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates">Prescription prepayment certificates </a></li>
+      </ul>
+
+
+  <p><a href="https://services.nhsbsa.nhs.uk/check-for-help-paying-nhs-costs/start">Use our eligibility tool</a> to see if you qualify for free or reduced cost NHS prescriptions or dental treatment.</p>
+
+  <hr>
+
+  <p class="small-text">NHS Penalty Charge Notices are issued in accordance with the NHS (Penalty Charge) Regulations 1999. The NHS Business Services Authority (NHSBSA) works on behalf of the NHS to check claims for free prescriptions and recover charges from patients who incorrectly claim they do not have to pay. This is done to protect public funds and provide best value for money for the taxpayer. </p>
+
+    </div>
+
+  </div>
+
+  <p id="usermail"class="visually-hidden">{{hasmail}}</p>
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Pay an NHS Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-full">
+            <div class="phase-banner">
+                <p>
+                <strong class="phase-tag">ALPHA</strong>
+                <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+                </p>
+            </div>
+        </div>
+      
+        <div class="column-two-thirds">
+          
+          <div class="done-panel">
+          <!-- If the user is paying the full amount or they are making a single instalment payment then display the amount paid -->
+            <h1 class="heading-large"><span id="done-tick"> </span>Done</h1>
+            
+            <h2 class="heading-medium">
+              Thank you. You have paid £{{paymentamount}} from Penalty Charge Notice number {{pcn}}
+            </h2>
+            
+          </div>
+          
+          {% if (instalments == 1) %}
+          <h3 class="heading-medium">This Penalty Charge Notice is closed.</h3>
+          {% endif %}
+
+          
+          {% if (hasmail == true) %}
+            A payment receipt has been emailed to mrssmith@gmail.com.
+          {% endif %}
+
+                    
+          {% if (instalments != 1) %}
+          <h3 class="heading-medium">Next payment</h3> 
+          <p>Your next payment of £{{paymentamount}} is due on 18 November 2017.</p>
+          <p>As long as you keep up payments there will be no further charges added to you account.</p>
+          {% endif %}
+          
+          <h3 class="heading-medium">How to avoid penalties in the future</h3>
+          <ul class="list list-bullet">
+            <li>Make sure that your GP and dentist have your correct home address</li>
+            <li>If you receive benefits or have an exemption certificate, make sure that the relevant organisations have your correct home address</li>
+            <li>If you have an exemption certificate, make sure it does not expire</li>
+            <li>For more information visit www.nhsbsa.nhs.uk/penaltycharges</li>
+          </ul>
+          
+          {% if (instalments != 1) %}
+          <p>
+            <a class="" href="../challenge/penalty-updated">Make another payment</a>
+          </p>          
+          {% endif %}
+          
+          
+          
+          <h2 class="heading-medium">Feedback</h2>
+          <p>
+            Help us improve the service by <a class="" href="">answering some questions</a> about it.
+          </p>
+        </div>
+      
+    </div>
+  
+    <p id="usermail"class="visually-hidden">{{hasmail}}</p>
+  
+</main>
+
+{% endblock %}

@@ -1,0 +1,198 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Pay a Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+          <div class="column-full">
+      <div class="phase-banner">
+        <p>
+          <strong class="phase-tag">ALPHA</strong>
+          <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+        </p>
+      </div>
+    </div>
+    <div class="column-two-thirds">
+            <div id="back">
+        <a href="javascript:history.go(-1)" id="back-button" class="link-back">Back</a>
+        <script type="text/javascript">
+            document.getElementById('back-button');
+        </script>
+	</div>
+  <div class="text">
+
+    <h1 class="heading-large">
+      Confirm your payment
+    </h1>
+
+    <div class="review">
+
+      <div class="review-row">
+        <div>
+          <p>Payment today</p>
+        </div>
+        <div>
+          <p>£{{amount}}</p>
+        </div>
+        <div>
+          <p><a href="../challenge/penalty-view">Change</a></p>
+        </div>
+      </div>
+
+      <div class="review-row">
+        <div>
+          <p>Card number</p>
+        </div>
+        <div>
+          <p>123456789</p>
+        </div>
+        <div>
+          <p><a href="card-details">Change</a></p>
+        </div>
+      </div>
+
+      <div class="review-row">
+        <div>
+          <p>Expiry date</p>
+        </div>
+        <div>
+          <p>01/18</p>
+        </div>
+        <div>
+          <p><a href="card-details">Change</a></p>
+        </div>
+      </div>
+
+      <div class="review-row">
+        <div>
+          <p>Name on card</p>
+        </div>
+        <div>
+          <p>Mr M Smith</p>
+        </div>
+        <div>
+          <p><a href="card-details">Change</a></p>
+        </div>
+      </div>
+              {% if (plan == 68) %}
+
+
+      {% elif (plan == 34) %}
+      <div class="review-row">
+        <div>
+          <p>Your plan</p>
+        </div>
+        <div>
+          <p>2 monthly payments of £34</p>
+        </div>
+        <div>
+          <p><a href="overview">Change</a></p>
+        </div>
+      </div>
+      {% elif (plan == 17) %}
+      <div class="review-row">
+        <div>
+          <p>Your plan</p>
+        </div>
+        <div>
+          <p>4 monthly payments of £17</p>
+        </div>
+        <div>
+          <p><a href="overview">Change</a></p>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="review-row">
+        <div>
+          <p>Get payment reminders and receipts by text?</p>
+        </div>
+        <div>
+          <p id="hastext">{{hastext}}</p>
+        </div>
+        <div>
+          <p><a href="contact-option-full">Change</a></p>
+        </div>
+      </div>
+
+      {% if (hastext == 'Yes') %}
+      <div class="review-row">
+        <div>
+          <p>Mobile Number</p>
+        </div>
+        <div>
+
+          <p>{{text}}</p>
+
+        </div>
+        <div>
+          <p><a href="text-value">Change</a></p>
+        </div>
+      </div>
+
+          {% else %}
+
+          {% endif %}
+                    <div class="review-row">
+        <div>
+          <p>Get payment reminders and receipts by email?</p>
+        </div>
+        <div>
+          <p id="hasmail">{{hasmail}}</p>
+        </div>
+        <div>
+          <p><a href="contact-option-full">Change</a></p>
+        </div>
+      </div>
+
+
+            {% if (hasmail == 'Yes') %}
+      <div class="review-row">
+        <div>
+          <p>Email address</p>
+        </div>
+        <div>
+
+          <p>{{email}}</p>
+
+        </div>
+        <div>
+          <p><a href="text-value">Change</a></p>
+        </div>
+      </div>
+
+          {% else %}
+
+          {% endif %}
+
+    </div>
+
+
+    <table>
+
+    </table>
+
+    <p><br></p>
+
+    <form action="account-handler" method="get" class="form">
+      <div class="form-item-wrapper">
+        <div class="form-group">
+          <input class="button" type="submit" value="Confirm and pay">
+        </div>
+      </div>
+    </form>
+
+    <p class="navigation"><a class="cancel" href="start">Cancel payment</a></p>
+
+  </div>
+  </div>
+  </div>
+
+</main>
+
+{% endblock %}

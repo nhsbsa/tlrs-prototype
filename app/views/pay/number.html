@@ -1,0 +1,89 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Pay a Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Pay a Penalty Charge Notice</p>
+        <h1 class="heading-large">What is your PCN number?</h1>
+      </div>
+
+      <p>Enter the 9 digit number on your Penalty Charge Notice letter.</p>
+
+<!--
+      <p>
+        The name you give should match what is printed on your prescriptions.
+      </p>
+-->
+
+      <form action="num-handler" method="get" class="form">
+
+        <div class="form-group">
+<!--
+          <label class="form-hint" for="firstname">
+            For example: 959385732
+          </label>
+-->
+          <input class="form-control" id="pcnnumber" name="pcnnumber" type="text">
+        </div>
+
+<!--
+        <div class="form-group">
+          <label class="form-label" for="middlenames">
+            Middle names (optional)
+          </label>
+          <input class="form-control" id="middlenames" name="middlenames" type="text">
+        </div>
+-->
+
+<!--
+        <div class="form-group">
+          <label class="form-label" for="lastname">
+            Last name
+          </label>
+          <input class="form-control" id="lastname" name="lastname" type="text">
+        </div>
+-->
+
+        <div>
+        <details>
+
+  <summary><span class="summary">Lost Penalty Charge Notice</span></summary>
+
+  <div class="panel panel-border-narrow">
+
+    <p>
+      If you have lost your Penalty Charge Notice or don’t know your PCN number call us on 0300 330 9291
+    </p>
+
+  </div>
+
+</details>
+        </div>
+        <br>
+
+        <div class="form-item-wrapper">
+          <div class="form-group">
+            <input class="button" type="submit" value="Next">
+          </div>
+        </div>
+
+        <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
+
+      </form>
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

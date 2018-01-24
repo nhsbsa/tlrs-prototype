@@ -1,0 +1,83 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Challenge a Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+    <div class="grid-row">
+    <div class="column-full">
+      <div class="phase-banner">
+          <p>
+            <strong class="phase-tag">ALPHA</strong>
+            <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+          </p>
+        </div>
+    </div>
+  </div>
+
+    
+  <div class="grid-row">
+    
+    <div class="column-two-thirds">
+      <div class="heading-group">
+        <h1 class="heading-xlarge">Pay or Challenge a Penalty Charge Notice</h1>
+      </div>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+        
+        <p>
+          Use this service to:
+        </p>
+        
+        <ul class="list list-bullet">
+          <li>pay your Penalty Charge Notice</li>
+          <li>make a challenge (if you know you were entitled to free NHS prescriptions or dental treatment at the time, or have an exceptional reason not to pay) </li>
+        </ul>
+        
+
+      </div>
+
+      <form action="enter-pcn-number" method="get" class="form">
+
+          <div class="form-item-wrapper">
+            <div class="form-group">
+              <input class="button button-get-started" type="submit" value="Start">
+            </div>
+          </div>
+        
+        </form>
+        
+        <div>
+            
+                    <h1 class="heading-medium">Before you start</h1>
+            <p>
+              You will need your reference number. This can be found in the top left-hand corner of your Penalty Charge Notice.
+            </p>
+            
+            <p>To confirm your identity we will ask for your date of birth and the total amount on your Penalty Charge Notice.</p>
+            
+                    <details>
+          <summary><span class="summary">Have you lost your Penalty Charge Notice?</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>
+              If you have lost your Penalty Charge Notice or don’t know your reference number, call us on 0300 330 9291
+            </p>
+          </div>
+        </details>
+            
+        </div>
+      
+ </div>
+      
+    </div>
+  
+</main>
+
+{% endblock %}

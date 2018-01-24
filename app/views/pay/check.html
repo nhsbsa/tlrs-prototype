@@ -1,0 +1,119 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Pay a Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <div class="text">
+
+    <div class="heading-group">
+      <p>Pay a Penalty Charge Notice</p>
+      <h1 class="heading-large">
+        Check your answers
+      </h1>
+    </div>
+    
+    
+    <div class="review">
+      <div class="review-row">
+        <div>
+          <p>PCN number</p>
+        </div>
+        <div>
+          <p>{{pcnnumber}}</p>
+        </div>
+        <div>
+          <p><a href="">Change</a></p>
+        </div>
+      </div>
+      
+      <div class="review-row">
+        <div>
+          <p>Payment today</p>
+        </div>
+        <div>
+          <p>£{{amount}}</p>
+        </div>
+        <div>
+          <p><a href="">Change</a></p>
+        </div>
+      </div>
+
+      <div class="review-row">
+        <div>
+          <p>Get a payment receipt sent by email?</p>
+        </div>
+        <div>
+          <p id="hasmail">{{hasmail}}</p>
+        </div>
+        <div>
+          <p><a href="">Change</a></p>
+        </div>
+      </div>
+
+      <div id="mailaddress" class="review-row">
+        <div>
+          <p>Email address</p>
+        </div>
+        <div>
+          <p>{{email}}</p>
+        </div>
+        <div>
+          <p><a href="">Change</a></p>
+        </div>
+      </div>
+
+    </div>
+
+<!--
+    <table id="review-table-one">
+           about you 
+          <tr>
+            <td>PCN number</td>
+            <td>{{pcnnumber}}</td>
+            <td><a href="name">Change</a></td>
+          </tr>
+          <tr>
+            <td>Payment today</td>
+            <td>£{{amount}}</td>
+            <td><a href="dob">Change</a></td>
+          </tr>
+          <tr>
+            <td>Get a payment receipt sent by email</td>
+            <td id="hasmail">{{hasmail}}</td>
+            <td><a href="email">Change</a></td>
+          </tr>
+          <tr id="mailaddress">
+            <td>Email address</td>
+            <td>{{email}}</td>
+            <td><a href="mail-value">Change</a></td>
+          </tr>
+      </table>
+-->
+
+    <br>
+
+    <form action="payment" method="get" class="form">
+      <div class="form-item-wrapper">
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+      </div>
+    </form>
+
+    <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
+
+  </div>
+  </div>
+  </div>
+
+</main>
+
+{% endblock %}

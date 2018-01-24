@@ -1,0 +1,44 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Pay an NHS Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <div class="heading-group">
+        <p>Pay an NHS Penalty Charge Notice</p>
+        <h1 class="heading-large">How would you like to receive your payment confirmations and receipts?</h1>
+      </div>
+      <form class="form" action="contact-handler" id="contact-boxes">
+        <p class="form-hint">
+          Tick all that apply
+        </p>
+
+        <fieldset class="form-group">
+          <legend class="visually-hidden">
+            Get a copy of your prepayment details sent by text message and email
+          </legend>
+          <div class="multiple-choice multiple-radio">
+            <input id="text" name="text" type="checkbox" value="true">
+            <label for="text">By text</label>
+          </div>
+          <div class="multiple-choice multiple-radio">
+            <input id="email" name="email" type="checkbox" value="true">
+            <label for="email">By email</label>
+          </div>
+        </fieldset>
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+        <p class="navigation"><a href="nocomms-handler">I do not wish to recieve payment reminders or receipts</a></p>
+        <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

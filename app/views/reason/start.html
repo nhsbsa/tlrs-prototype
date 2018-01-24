@@ -1,0 +1,62 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Challenge a Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-full">
+      <div class="phase-banner">
+          <p>
+            <strong class="phase-tag">ALPHA</strong>
+            <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+          </p>
+        </div>
+    </div>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <div class="heading-group">
+        <h1 class="heading-xlarge">
+          Tell u you had an exceptional reason not to pay for a prescription
+        </h1>
+      </div>
+    </div>
+    <div class="column-two-thirds">
+      <div class="text">
+        <p>
+          You can use this service to tell us you have not acted wrongfully or with any lack of care. 
+        </p>
+        <p>
+          If we agree we will drop the penalty charge, but you must still pay the prescription charges.
+        </p>
+        <div class="panel panel-border-wide">
+          <p>
+            We will not drop the penalty charge if you:
+          </p>
+          <ul class="list list-bullet">
+            <li>had an exemption certificate but it expired</li>
+            <li>were given wrong information or advice by anyone</li>
+          </ul>
+        </div>
+      </div>
+      <br>
+      <form action="reason" method="get" class="form">
+        <div class="form-item-wrapper">
+          <div class="form-group">
+            <input class="button" type="submit" value="Next">
+          </div>
+        </div>
+      </form>
+      <p><a href="../challenge/penalty-view">Cancel</a></p>
+      
+    </div>
+      
+  </div>
+  
+</main>
+
+{% endblock %}

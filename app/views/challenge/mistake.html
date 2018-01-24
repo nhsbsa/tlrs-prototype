@@ -1,0 +1,83 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHS Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+  <div class="grid-row">
+    <div class="column-full">
+      <div class="phase-banner">
+          <p>
+            <strong class="phase-tag">ALPHA</strong>
+            <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+          </p>
+        </div>
+        <a class="link-back" href="">Back</a>
+    </div>
+  </div>
+  
+  <div class="grid-row">
+      
+    <div class="column-two-thirds">
+    
+      <div class="heading-group">
+        <p>Challenge a Penalty Charge Notice</p>
+        <h1 class="heading-large">
+          Which details are wrong? 
+        </h1>
+      </div>
+      
+      <p>
+       Select all of the wrong details
+      </p>
+      
+      <form action="address" method="get" class="form">
+        
+        <div class="form-item-wrapper">
+                    
+          <div class="multiple-choice multiple-radio">
+            <input type="checkbox" id="name" value="name" name="name">
+            <label class="form-control-checkbox minor-checkbox" for="name">
+              Your name - <span class="strong">{{name}}</span>
+            </label>
+          </div>
+          <div class="multiple-choice multiple-radio">
+            <input type="checkbox" id="address" value="address" name="address">
+            <label class="form-control-checkbox minor-checkbox" for="address">
+              Your address - <span class="strong">{{address}}</span>
+            </label>
+          </div>
+                    
+          <div class="form-group">
+            <div class="multiple-choice multiple-radio">
+              <input type="checkbox" id="dob" value="dob" name="dob">
+              <label class="form-control-checkbox minor-checkbox" for="dob">
+                Your date of birth - <span class="strong">01 August 1980</span>
+              </label>
+            </div>
+          </div>          
+        </div>
+
+        <div class="form-item-wrapper">
+          <div class="form-group">
+            <input class="button" type="submit" value="Next">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
+        </div>
+      
+      </form>
+      
+      </div>
+      
+    </div>      
+    
+</main>
+
+{% endblock %}

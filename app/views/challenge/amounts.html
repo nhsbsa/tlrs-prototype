@@ -1,0 +1,85 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHS Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    
+  <div class="grid-row">
+    
+    <div class="column-two-thirds">
+    
+      <div class="heading-group">
+        <p>NHS Penalty Charge Notice</p>
+        <h1 class="heading-large">Penalty charge reference 639820475 {{pcnnumber}} </h1>
+      </div>
+        
+      <div>
+        <h2 class="heading-medium">Details from the prescription</h2>
+          <p>
+            <span class="strong">Prescription for: </span>
+            <br>Jane Doe
+          </p>
+        <p><span class="strong">Address</span> <br>
+          3 Old Street, Town, City NE1 123
+        </p>
+          <p>
+            <span class="strong">Prescription collected on or between: </span>
+            <br>1 July 2017 and 31 July 2017
+          </p>
+          <p>
+            <span class="strong">Exemption selected: </span>
+            <br>
+              Box L - "You were named on a current HC2 charges certificate” (NHS Low Income Scheme for full help)
+          </p>
+        <p><a href="personal">If any of these details are wrong tell us</a></p>
+      </div>
+      
+      <div>
+        <h2 class="heading-medium">Amounts due</h2>
+        <div class="info-table">
+          <p>Prescription charges: <span class="">£8.60</span></p>
+          <p>Penalty charge: <span class="">£50</span></p>
+          <p>Total due: <span class="strong">£58.60</span></p>
+        </div>
+      </div>
+      <div class="panel panel-border-wide">
+      <p>
+        You have 4 weeks to pay (by 30 September 2017) or an additional penalty of up to £50 will be added to these charges.
+      </p>
+      </div>
+<!--            <h2 class="heading-large">Avoid further charges</h2>-->
+<div>
+        <h2 class="heading-medium">Pay the penalty charge</h2>
+        <p>You can pay all or part of the penalty charge now. The minium payment is £8.60. If you pay the minimum payment today there will be no further charges for 28 days.</p>
+        <p>
+          <a class="button" href="../pay/summary">Make a payment</a>
+        </p>
+      </div>  
+      
+      <div>
+        <h2 class="heading-medium">Challenge the penalty charge</h2>
+        <p>
+          You can challenge this penalty charge if:
+        </p>
+        
+        <ul class="list list-bullet">
+          <li>between 1 July 2017 and 31 July 2017, you were entitled to free NHS health costs, or</li>
+          <li>had a valid NHS exemption or prescription prepayment, or</li>
+          <li>had a valid reason not to pay</li>
+        </ul>
+        <p>
+          <a class="button" href="personal">Challenge the penalty charge</a>
+        </p>
+
+      </div>
+      </div>
+      
+    </div>      
+    
+</main>
+
+{% endblock %}

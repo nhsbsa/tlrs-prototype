@@ -1,0 +1,108 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Pay a Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="heading-group">
+        <p>Pay a Penalty Charge Notice</p>
+        <h1 class="heading-large">PCN number: {{pcnnumber}}</h1>
+      </div>
+
+      <div class="info-table">
+<!--        <p>Penalty charge reference: <span class="">123456789</span></p>-->
+        <p>Total to pay: <span class="">£{{originalbalance}}</span></p>
+        <p>Paid so far: <span class="">£{{payment}}</span></p>
+        <p>Still to pay: <span class="strong">£{{newbalance}}</span></p>
+      </div>
+
+<!--
+      <p>
+        The name you give should match what is printed on your prescriptions.
+      </p>
+-->
+
+      <form action="payment-handler" method="get" class="form">
+
+        <div class="form-group">
+          <label class="form-label strong" for="firstname">
+            How much are you paying today?
+          </label>
+            <div class="pound">
+             <p>£</p>
+            </div>
+           <input class="form-control" id="amount" name="amount" type="number">
+        </div>
+
+<!--
+        <div class="form-group">
+          <label class="form-label" for="middlenames">
+            Middle names (optional)
+          </label>
+          <input class="form-control" id="middlenames" name="middlenames" type="text">
+        </div>
+-->
+
+<!--
+        <div class="form-group">
+          <label class="form-label" for="lastname">
+            Last name
+          </label>
+          <input class="form-control" id="lastname" name="lastname" type="text">
+        </div>
+-->
+                <div>
+        <details>
+
+  <summary><span class="summary">Payment options</span></summary>
+
+  <div class="panel panel-border-narrow">
+
+    <h2 class="heading-small">Pay in full</h2>
+    <p>
+      You can pay the amount in full now, so the Penalty Charge Notice will be cleared today.
+    </p>
+
+    <h2 class="heading-small">Pay in instalments</h2>
+
+    <p>
+      You can pay in instalments. This means that you can split the full amount into a number of smaller payments. You will still need to pay the full amount, but it might be easier for you to manage.
+    </p>
+
+    <p>
+      If you need to pay in instalments you must pay your first instalment now.
+    </p>
+
+    <p>
+      You will need to have paid off <span class="strong">at least £44 before 30 December 2017</span> (three months from today).
+    </p>
+
+  </div>
+
+</details>
+        </div>
+<br>
+        <div class="form-item-wrapper">
+          <div class="form-group">
+            <input class="button" type="submit" value="Next">
+          </div>
+        </div>
+
+        <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
+
+      </form>
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

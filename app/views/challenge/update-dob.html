@@ -1,0 +1,83 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHS Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+  <div class="grid-row">
+    <div class="column-full">
+      <div class="phase-banner">
+          <p>
+            <strong class="phase-tag">ALPHA</strong>
+            <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+          </p>
+        </div>
+        <a class="link-back" href="">Back</a>
+    </div>
+  </div>
+    
+  <div class="grid-row">
+    
+    <div class="column-two-thirds">
+
+      <!-- <p class="navigation"><a class="back-to-previous">Back</a></p> -->
+
+      <div class="heading-group">
+        <p>Challenge a Penalty Charge Notice</p>
+        <h1 class="heading-large">
+          What is your date of birth?</h1>
+      </div>
+      
+<!--
+      <p>
+        The address you give should match what is printed on your prescriptions.
+      </p>
+-->
+
+       <form class="form"  action="update-dob-handler" method="get">
+        
+        <fieldset class="form-group">
+          
+          <legend class="visuallyhidden">Date of birth</legend>
+
+          <div class="form-date">
+            
+            <p class="form-hint">For example, 31 03 1980</p>
+            <div class="form-group form-group-day">
+              <label for="day">Day</label>
+              <input class="form-control" id="day" name="day" type="number" pattern="[0-9]*" min="0" max="31">
+            </div>
+            
+            <div class="form-group form-group-month">
+              <label for="month">Month</label>
+              <input class="form-control" id="month" name="month" type="number" pattern="[0-9]*" min="0" max="12">
+            </div>
+            
+            <div class="form-group form-group-year">
+              <label for="year">Year</label>
+              <input class="form-control" id="year" name="year" type="number" pattern="[0-9]*" min="0" max="2014">
+            </div>
+            
+          </div>
+          
+        </fieldset>
+        
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+        
+        <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
+        
+      </form>
+      
+    </div>
+    
+  </div>
+  
+</main>
+
+{% endblock %}

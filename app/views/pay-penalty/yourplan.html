@@ -1,0 +1,104 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Pay an NHS Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+      
+          <div class="column-full">
+      <div class="phase-banner">
+        <p>
+          <strong class="phase-tag">ALPHA</strong>
+          <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+        </p>
+      </div>
+    </div>
+      
+      
+
+    <div class="column-two-thirds">
+        
+            <div id="back">
+        <a href="javascript:history.go(-1)" id="back-button" class="link-back">Back</a>
+        <script type="text/javascript">
+            document.getElementById('back-button');
+        </script>
+	</div>
+
+      <div class="text">
+
+        <div class="heading-group">
+          <p>Pay an NHS Penalty Charge Notice</p>
+          <h1 class="heading-large">
+            Payment plan
+          </h1>
+        </div>
+        
+        <div class="review">
+          
+          <div class="review-row">
+            <div>
+              <p>Number of payments</p>
+            </div>
+            <div>
+              <p>{{instalments}}</p>
+            </div>
+            <div>
+              <p><a href="./options">Change</a></p>
+            </div>
+          </div>
+          {% for i in range(0, instalments) -%}
+          <div class="review-row">
+            <div>
+              <p>
+                {% if (i == 0) %}
+                  Payment today
+                {% elseif (i == 1) %}
+                  18 December 2017
+                {% elseif (i == 2) %}
+                  18 January 2018
+                {% elseif (i == 3) %}
+                  18 February 2018
+                {% endif %}
+
+              </p>
+            </div>
+            <div>
+              <p>£{{amount}}</p>
+             </div>
+          </div>
+          {%- endfor %}
+          
+        </div>
+        
+        <div>
+          <p>It is your responsibility to make the payments listed before the dates shown.</p>
+        </div>
+        
+<!--
+        <p>Print this plan</p>
+        <p>Download this plan</p>
+-->
+
+    <form action="card-details" method="get" class="form">
+      <div class="form-item-wrapper">
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+      </div>
+    </form>
+
+    <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
+
+  </div>
+  </div>
+  </div>
+
+</main>
+
+{% endblock %}

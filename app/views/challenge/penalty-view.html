@@ -1,0 +1,224 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHS Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+  <div class="grid-row">
+    
+    <div class="column-full">
+      
+      <div class="phase-banner">
+        
+        <p>
+          <strong class="phase-tag">ALPHA</strong>
+          <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+        </p>
+        
+      </div>
+      
+      <div class="heading-group">
+        
+        <p>Pay or Challenge a Penalty Charge Notice</p>
+        
+        <h1 class="heading-xlarge">Penalty Charge Notice {{ref}}</h1>
+        
+      </div>
+      
+      <div class="panel panel-border-wide">
+        
+        <h3 class="heading-medium">Don’t delay</h3>
+        
+        <p>
+          You have <span class="strong">28 days</span> to start paying or challenge this Penalty Charge Notice (by {{challengeDate}}). If you don’t respond, an extra fine of £50 will be added to these charges.
+        </p>
+        
+      </div>
+        
+      
+    </div>
+      
+      
+    
+  </div>
+    
+  <div class="grid-row">
+    
+    <div class="column-half">
+      
+      <div class="info-panel highlight ">
+        
+        <h2 class="heading-large">Charges payable</h2>
+        
+          <table class="chargesTable">
+  <tr>
+            {% if (ticked == 'K') %}
+            <td>Dental charges</td>
+        {% else %}
+            <td>Prescription charges</td>
+        {% endif %}
+      <td></td>
+    <td>£8.60</td> 
+  </tr>
+  <tr>
+    <td>Penalty charge</td>
+      <td></td>
+    <td>£60</td> 
+  </tr>
+                <tr>
+    <td>Total amount</td>
+      <td></td>
+    <td>£68.60</td> 
+  </tr>
+</table>
+        
+          <br>
+          <br>
+                    <br>
+          <br>
+                    <br>
+          <br>
+                    <br>
+
+                         
+      </div>   
+      
+    </div>
+
+    
+    <div class="column-half">
+      
+      <div class="info-panel">
+        
+          <h2 class="heading-medium">
+              
+        Date {% if (ticked == 'K') %}
+            dental treatment
+          {% else %}
+          prescription
+          {% endif %}
+           was claimed
+          </h2>
+          
+          <p>Between {{checkdate}}</p>
+          
+          <h2 class="heading-medium">
+            Details on the           {% if (ticked == 'K') %}
+            dental charge form
+          {% else %}
+          prescription
+          {% endif %}
+          </h2>
+          
+                    <table>
+
+  <tr>
+    <td>Name</td>
+
+    <td>{{name}}</td> 
+  </tr>
+  <tr>
+    <td>Address</td>
+
+    <td>{{address}}</td> 
+  </tr>
+                <tr>
+    <td>Date of birth</td>
+
+    <td> 01 January 1985</td> 
+  </tr>
+                                        <tr>
+    <td>Exemption reason ticked</td>
+
+<td>{{cat}}</td> 
+  </tr>
+</table>
+                
+        </div>
+          
+        </div>
+        
+      </div>
+    
+      <div class="grid-row">
+    
+    <div class="column-half">
+      
+      <div class="info-panel highlight">
+        
+        <h2 class="heading-large">Pay</h2>
+
+        
+        <p>
+          You will need a debit or credit card.
+        </p>
+          
+          
+          <form class="form" action="#">
+              
+        <div class="form-group">
+          <input class="button" type="submit" value="Pay in full">
+        </div>
+          
+              </form>
+          <br>
+          <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+
+                         
+      </div>   
+      
+    </div>
+
+    
+    <div class="column-half">
+      
+      <div class="info-panel highlight">
+        
+          <h2 class="heading-large head-2">
+            Challenge
+          </h2>
+          
+          <p>You can make a challenge if you know that you were entitled to free {% if (ticked == 'K') %}
+            dental treatment.
+          {% else %}
+          prescriptions.
+          {% endif %}</p>
+
+          
+                    <form class="form" action="info-page">
+              
+        <div class="form-group">
+          <input class="button" type="submit" value="Challenge">
+        </div>
+          
+              </form>
+
+          <p>If you were not entitled to free {% if (ticked == 'K') %}
+
+            dental treatment 
+          {% else %}
+            prescriptions
+          {% endif %} but you think you have an <a href="#">exceptional reason not to pay - find out more</a>.</p>
+
+          
+        </div>
+          
+        </div>
+        
+      </div>
+      
+  
+</main>
+
+{% endblock %}

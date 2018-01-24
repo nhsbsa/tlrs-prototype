@@ -1,0 +1,100 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Pay a Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+      <div class="grid-row">
+      <div class="column-full">
+        <div class="phase-banner">
+            <p>
+              <strong class="phase-tag">ALPHA</strong>
+              <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+            </p>
+          </div>
+      </div>
+    </div>
+    
+  <div class="grid-row">
+    
+    <div class="column-two-thirds">
+         
+    <h1 class="heading-xlarge">You were not entitled to collect free prescriptions under Universal Credit.</h1>
+      
+    <p>
+      Your Universal Credit award did not allow you to collect free prescriptions between {{checkdate}} because your take home pay was more than £{{amount}}.
+    </p>
+            
+    <h3 class="heading-medium">How to close this Penalty Charge Notice</h3>
+
+    <p>
+     You have 2 choices:
+    </p>
+
+    <ul class="list list-bullet">
+      <li>
+        <a href="">pay the total of £51.60.</a> You can pay in one payment or in instalments.
+      </li>
+      <li>
+        <a href="">provide proof you were entitled to collect free prescriptions between {{checkdate}}</a></li>
+    </ul>
+      
+<!--
+    <p>
+      You need to pay the total of £51.60. You can pay in one payment or in instalments.
+    </p>
+      
+    <p><a href="penalty-view" class="button"> Pay now </a></p>
+-->
+      
+<!--
+      <ul class="list list-bullet">
+        <li><a href="">provide proof you had a {{certificate}}</a></li>
+        <li><a href="">pay the penalty charge in full</a></li>
+      </ul>
+-->
+
+      
+<!--
+      <h2 class="heading-medium">If you had a valid reason not to pay</h2>
+      
+      <p>
+        If you feel you had a valid reason not to pay the penalty charge you can tell us.
+      </p>
+      
+      <p>
+        <a class="" href="">Tell us about a valid reason not to pay</a>
+      </p>
+      
+      <h2 class="heading-medium">Send us proof of your entitlement to x</h2>
+      
+      <p>
+        Send proof of your entitlement to {{ticked}} x
+      </p>
+      
+      <p>
+        <a class="" href="./penalty-view">How to send proof</a>
+      </p>  
+      
+      <h2 class="heading-medium">Pay the penalty charge</h2>
+      
+      <p>
+        Alternaitively you should pay the penalty charge.
+      </p>
+      
+      <p>
+        <a class="" href="./penalty-view">Make a payment</a>
+      </p>  
+ 
+-->
+    </div>
+    
+  </div>
+
+</main>
+
+{% endblock %}

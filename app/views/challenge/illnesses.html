@@ -1,0 +1,117 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHS Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+      <div class="grid-row">
+      <div class="column-full">
+        <div class="phase-banner">
+            <p>
+              <strong class="phase-tag">ALPHA</strong>
+              <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+            </p>
+          </div>
+      </div>
+    </div>
+
+    
+  <div class="grid-row">
+      
+    <div class="column-two-thirds">
+    
+      <div class="heading-group">
+          <p>Challenge a Penalty Charge Notice</p>
+        <h1 class="heading-large">
+          Do you have any of these long-term medical conditions or disabilities?
+        </h1>
+                
+      </div>
+      
+      <div class="panel panel-border-wide">
+        <p>If you're unsure about the name of your condition or treatment, check with your doctor.</p>
+      </div>
+      
+      <ul class="list list-bullet highlighted">
+        <li>
+          <span>Cancer and are undergoing treatment</span>
+          Including treatment for the effects of cancer or the effects of cancer treatment.
+        </li>
+        <li>
+          <span>Diabetes - type 1 or type 2</span>
+          If you need medication to keep blood sugar levels stable.
+        </li>
+                  <li>
+          <span>Diabetes insipidus</span>
+          And other forms of hypopituitarism.
+        </li>
+                  <li>
+          <span>A continuing physical disability</span>
+          Which means you can't go out without the help of another person.
+        </li>
+        <li>
+          <span>Epilepsy</span>
+          If you need continuous anticonvulsive therapy.
+        </li>
+        <li>
+          <span>A permanent fistula</span>
+          Which needs continuous surgical dressing or an appliance - for example, caecostomy, colostomy, laryngostomy or ileostomy.
+        </li>
+        <li>
+          <span>Hypoadrenalism</span>
+          Where specific substitution therapy is essential - for example, Addison’s Disease</li>
+                  <li>
+          <span>Hypoparathyroidism </span>
+          Which means your parathyroid glands produce too little parathyroid hormone.
+        </li>
+        <li>
+          <span>Myasthenia gravis</span>
+          Where an autoimmune condition affects your nerves and muscles.
+        </li>
+                  <li>
+          <span>Myxoedema</span>
+          For example, hypothyroidism which needs thyroid hormone replacement.
+        </li>
+      </ul>
+      
+       <form action="illnesses-handler" method="get" class="form">
+
+          <div class="form-group">
+
+            <fieldset class="inline">
+              <legend class="visually-hidden">
+              </legend>
+
+              <div class="multiple-choice">
+                <input id="yes" type="radio" name="medical" value="yes">
+                <label for="yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="no" type="radio" name="medical" value="no">
+                <label for="no">No</label>
+              </div>
+              
+          </fieldset>  
+
+          </div>
+
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+          <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
+
+        </form>
+      
+      </div>
+      
+    </div>      
+    
+</main>
+
+{% endblock %}

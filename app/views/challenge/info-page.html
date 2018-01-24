@@ -1,0 +1,76 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Challenge a Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+    <div class="grid-row">
+    <div class="column-full">
+      <div class="phase-banner">
+          <p>
+            <strong class="phase-tag">ALPHA</strong>
+            <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+          </p>
+        </div>
+    </div>
+  </div>
+
+    
+  <div class="grid-row">
+    
+    <div class="column-two-thirds">
+<div class="heading-group">
+        
+        <p>Pay or Challenge a Penalty Charge Notice</p>
+        
+        <h1 class="heading-large">What happens next?</h1>
+        
+      </div>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+                
+
+        
+        <p>
+          We will guide you through some simple online questions. We will:
+        </p>
+        
+        <ul class="list list-bullet">
+          <li>ask for some details about the exemption or benefit ticked on your prescription</li>
+          <li>ask about other exemptions or benefits you may have had, as this might be easier for us to check</li>
+          <li>tell you how to send us proof if we can’t confirm your exemption straight away</li>
+            <li>Let you know the next steps</li>
+        </ul>
+          
+
+        
+        <p>
+          If we can confirm that you held a valid exemption at the time, your Penalty Charge Notice will be cancelled. You will not have to pay any charges.
+        </p>
+          
+      </div>
+
+      <form action="did-you-have" method="get" class="form">
+
+          <div class="form-item-wrapper">
+            <div class="form-group">
+              <input class="button" type="submit" value="Next">
+            </div>
+          </div>
+        
+        </form>
+
+      </div>
+      
+    </div>
+  
+</main>
+
+{% endblock %}

@@ -1,0 +1,182 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHS Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+  <div class="grid-row">
+    
+    <div class="column-full">
+      
+      <div class="phase-banner">
+        
+        <p>
+          <strong class="phase-tag">ALPHA</strong>
+          <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+        </p>
+        
+      </div>
+      
+      <div class="heading-group">
+        
+        <p>Pay or Challenge a Penalty Charge Notice</p>
+        
+        <h1 class="heading-xlarge">Penalty Charge Notice {{ref}} </h1>
+        
+      </div>
+      
+      <p>
+        For
+          {% if (ticked == 'K') %}
+            dental treatment received
+          {% else %}
+            a prescription claimed 
+          {% endif %}
+        between
+        {{checkdate}}.
+      </p>
+      
+      <div class="panel panel-border-wide">
+        
+        <h3 class="heading-medium">Don’t delay</h3>
+        
+        <p>
+          You have <span class="strong">28 days</span> to start paying or challenge this Penalty Charge Notice (by {{challengeDate}}). Otherwise an extra fine of up to £50 will be added to these charges.
+        </p>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+    
+  <div class="grid-row">
+    
+    <div class="column-half">
+      
+      
+      
+      
+      <div class="info-panel highlight">
+        <h2 class="heading-large">Pay</h2>
+        <!-- dental -->
+        <div class="prescription-details">
+        {% if (ticked == 'K') %}
+          <p>
+            <span>Dental charges</span>
+        {% else %}
+          <p>
+            <span>Prescription charges</span>
+        {% endif %}
+            £{{charge}}20.00
+          </p>
+          <p>
+            <span>Penalty charge</span>
+            £{{penalty}}40.00
+          </p>
+          <p>
+            <span>Payments made</span>
+            £{{penalty}}10.00
+          </p>
+          <p>
+            <span>Total left to pay</span>
+            £{{totaldue}}50.00
+          </p>
+        </div>
+        
+        <p>
+          You can pay in full so that your debt is cleared straight away, or continue to pay in instalments.
+        </p>
+        
+        <p>
+          You will need a debit or credit card.
+        </p>
+          
+        <form class="form" action="remainder-handler">
+              
+          <div class="form-group">
+            <input class="button" type="submit" value="Pay in full">
+          </div>
+          
+        </form>
+              
+        <p>
+          <a href="followup-handler">Pay next instalment</a>
+        </p>
+          
+        
+        
+      </div>   
+      
+    </div>
+    
+    <div class="column-half">
+      
+      <div class="info-panel no-highlight">
+        
+        <h2 class="heading-large">
+          Details on the 
+          {% if (ticked == 'K') %}
+            dental charge form
+          {% else %}
+          prescription
+          {% endif %}
+        </h2>
+                 
+            <p>
+              <span>
+                {% if (ticked == 'K') %}
+                  Dental treatment
+                {% else %}
+                  Prescription 
+                {% endif %}
+                  for
+              </span>
+              {{name}}
+            </p>
+            
+            <p>
+              <span>Address shown on the prescription</span> 
+              3 Old Street, Old Town NE1 0LD
+            </p>
+            
+            <p>
+              <span>Date of birth</span>
+              01 January 1985
+            </p>
+            
+            <p>
+              <span>Exemption reason ticked</span>
+              {{cat}}
+            </p>  
+        
+        </div>
+        
+         <div class="info-panel no-highlight">
+           
+          <h2 class="heading-large head-2">
+            Challenge
+          </h2>
+           
+           <p>
+            <a class=" " href="did-you-have">Tell us if there has been a mistake</a>
+          </p>
+          
+          <p>
+            <a class=" " href="">Tell us if you had an exceptional reason not to pay</a>
+          </p>
+
+          </div>
+          
+        </div>
+        
+      </div>
+      
+  
+</main>
+
+{% endblock %}

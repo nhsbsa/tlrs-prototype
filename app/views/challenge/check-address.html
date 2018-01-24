@@ -1,0 +1,81 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHS Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    
+  <div class="grid-row">
+    <div class="column-full">
+      <div class="phase-banner">
+          <p>
+            <strong class="phase-tag">ALPHA</strong>
+            <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+          </p>
+        </div>
+        <a class="link-back" href="">Back</a>
+    </div>
+  </div>
+  
+  <div class="grid-row">
+      
+    <div class="column-two-thirds">
+    
+      <div class="heading-group">
+        <p>Challenge a Penalty Charge Notice</p>
+        <h1 class="heading-large">
+          <!--  Is this the address where you had an {{title}} between {{checkdate}}?  -->
+          Is this the address where you had an {{title}}?
+        </h1>
+      </div>
+      
+<!-- <p>Between {{checkdate}}</p>-->
+      
+      <div class="panel panel-border-wide">
+
+        <p>{{address}}</p>
+      
+      </div>
+      
+      <br>
+      
+      <form action="check-address-handler" method="get" class="form">
+
+          <div class="form-group">
+
+            <fieldset class="inline">
+              <legend class="visually-hidden">
+              </legend>
+
+              <div class="multiple-choice">
+                <input id="yes" type="radio" name="details" value="yes">
+                <label for="yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="no" type="radio" name="details" value="no">
+                <label for="no">No</label>
+              </div>
+
+          </fieldset>  
+
+          </div>
+
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+          <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
+
+        </form>      
+      
+      </div>
+      
+    </div>      
+    
+</main>
+
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHS Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    
+  <div class="grid-row">
+      
+    <div class="column-two-thirds">
+    
+      <div class="heading-group">
+        <p>NHS Penalty Charge Notice</p>
+        <h1 class="heading-large">
+          Were you entitled to any of the following on or between 1 July 2017 &amp; 30 July 2017?
+        </h1>
+      </div>
+      
+      <form action="address" method="get" class="form">
+        
+        <div class="form-item-wrapper">
+                    
+          <div class="multiple-choice multiple-radio">
+            <input type="checkbox" id="twelve" value="twelve" name="duration">
+            <label class="form-control-checkbox minor-checkbox" for="twelve">
+              I had a valid maternity exemption certificate
+            </label>
+          </div>
+          
+          <div class="multiple-choice multiple-radio">
+            <input type="checkbox" id="twelve" value="twelve" name="duration">
+            <label class="form-control-checkbox minor-checkbox" for="twelve">
+              I had a valid medical exemption certificate
+            </label>
+          </div>
+                    
+          <div class="form-group">
+            <div class="multiple-choice multiple-radio">
+              <input type="checkbox" id="three" value="three" name="duration">
+              <label class="form-control-checkbox minor-checkbox" for="three">
+              I had a valid prescription prepaynent
+              </label>
+            </div>
+          
+          <div class="form-group">
+            <div class="multiple-choice multiple-radio">
+              <input type="checkbox" id="three" value="three" name="duration">
+              <label class="form-control-checkbox minor-checkbox" for="three">
+              I had a war pension exemption certificate
+              </label>
+            </div>
+          
+          <div class="form-group">
+            <div class="multiple-choice multiple-radio">
+              <input type="checkbox" id="three" value="three" name="duration">
+              <label class="form-control-checkbox minor-checkbox" for="three">
+              I was named on a valid HC2 certificate
+              </label>
+            </div>
+          
+          <div class="form-group">
+            <div class="multiple-choice multiple-radio">
+              <input type="checkbox" id="three" value="three" name="duration">
+              <label class="form-control-checkbox minor-checkbox" for="three">
+              I was getting income support or income related Employment ad support allowance
+              </label>
+            </div>
+          
+          <div class="form-group">
+            <div class="multiple-choice multiple-radio">
+              <input type="checkbox" id="three" value="three" name="duration">
+              <label class="form-control-checkbox minor-checkbox" for="three">
+              I was getting income based job seekers allowance
+              </label>
+            </div>
+          
+          <div class="form-group">
+            <div class="multiple-choice multiple-radio">
+              <input type="checkbox" id="three" value="three" name="duration">
+              <label class="form-control-checkbox minor-checkbox" for="three">
+              I was named on a valid Tax Credits Certificate
+              </label>
+            </div>
+          
+          <div class="form-group">
+            <div class="multiple-choice multiple-radio">
+              <input type="checkbox" id="three" value="three" name="duration">
+              <label class="form-control-checkbox minor-checkbox" for="three">
+              My partner was receiving pension credit guarantee credit
+              </label>
+            </div>
+          
+        </div>
+
+        <div class="form-item-wrapper">
+          <div class="form-group">
+            <input class="button" type="submit" value="Next">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
+        </div>
+      
+      </form>
+      
+      </div>
+      
+    </div>      
+    
+</main>
+
+{% endblock %}
