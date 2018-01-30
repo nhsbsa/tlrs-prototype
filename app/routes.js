@@ -426,35 +426,137 @@ router.get(/did-you-handler/, function (req, res) {
   }
 });
 
+router.get('/medical/', function (req, res) {
+  res.render('challenge/medical', {
+    certNo : currentUser.certNo,
+      hasBen : currentUser.hasBen
 
-
-// Ask for a cert number
-router.get(/cert-number/, function (req, res) {
-  res.render('challenge/cert-number', {
-    title : content.title
   });
 });
 
-// check cert number
+
+
+
+// Ask for a cert number
+router.get('/cert-number/', function (req, res) {
+  res.render('challenge/cert-number', {
+    title : content.title,
+      certNo : currentUser.certNo,
+      ticked : currentUser.ticked
+
+  });
+});
+
+     //check cert number
 router.get(/cert-handler/, function (req, res) {
  if (req.query.cert === "2") {
     currentUser.certNo = 2;
     res.redirect('update-contact');
+  } else if (req.query.cert === "3" && currentUser.ticked === "K") {
+    res.redirect('medical');
+      currentUser.certNo = 3;
+} else if (req.query.cert === "3" && currentUser.ticked === "H") {
+    res.redirect('medical');
+      currentUser.certNo = 3;
+} else if (req.query.cert === "4" && currentUser.ticked === "K") {
+    res.redirect('medical');
+      currentUser.certNo = 4;
+} else if (req.query.cert === "4" && currentUser.ticked === "H") {
+    res.redirect('medical');
+      currentUser.certNo = 4;
   } else if (req.query.cert === "3") {
-    res.redirect('out-of-date');
-  } else if (req.query.cert === "4") {
+    res.redirect('dwp-exemptions');
+      currentUser.certNo = 3;
+    }else if (req.query.cert === "4") {
     currentUser.certNo = 4;
-    if (currentUser.matD == true) {
-      res.redirect('pregnant');
-    } else if (currentUser.medE == true) {
-      res.redirect('medical');
+      res.redirect('dwp-exemptions');
     } else {
-      res.redirect('cant-find-cert');
-    }
-  } else {
     res.redirect('found');
-  }
-});
+    }
+  });
+
+     //check cert number
+//router.get(/cert-handler/, function (req, res) {
+// if (req.query.cert === "2") {
+//    currentUser.certNo = 2;
+//    res.redirect('update-contact');
+//  } else if (req.query.cert === "3" && currentUser.originalBen === 1) {
+//    res.redirect('medical');
+//      currentUser.certNo = 3;
+//} else if (req.query.cert === "3") {
+//    res.redirect('dwp-exemptions');
+//      currentUser.certNo = 3;
+//  } else if (req.query.cert === "4") {
+//    currentUser.certNo = 4;
+//      res.redirect('dwp-exemptions');
+//    } else {
+//    res.redirect('found');
+//    }
+//  });
+
+// check cert number
+//router.get(/cert-handler/, function (req, res) {
+// if (req.query.cert === "2") {
+//    currentUser.certNo = 2;
+//    res.redirect('update-contact');
+//  } else if (req.query.cert === "3") {
+//    res.redirect('dwp-exemptions');
+//      currentUser.certNo = 3;
+//  } else if (req.query.cert === "4") {
+//    currentUser.certNo = 4;
+//    if (currentUser.matD == true) {
+//      res.redirect('dwp-exemptions');
+//    } else if (currentUser.medE == true) {
+//      res.redirect('dwp-exemptions');
+//    } else if (currentUser.medE == true) {
+//      res.redirect('dwp-exemptions');
+//  } else {
+//    res.redirect('found');
+//  }
+//});
+    
+//    // check cert number
+//router.get(/cert-handler/, function (req, res) {
+// if (req.query.cert === "2") {
+//    currentUser.certNo = 2;
+//    res.redirect('update-contact');
+//  } else if (req.query.cert === "3") {
+//    res.redirect('dwp-exemptions');
+//      currentUser.certNo = 3;
+//  } else if (req.query.cert === "4") {
+//    currentUser.certNo = 4;
+//    if (currentUser.matD == true) {
+//      res.redirect('dwp-exemptions');
+//    } else if (currentUser.medE == true) {
+//      res.redirect('dwp-exemptions');
+//    } else if (currentUser.medE == true) {
+//      res.redirect('dwp-exemptions');
+//  } else {
+//    res.redirect('found');
+//  }
+//});
+
+
+// check cert number
+//router.get(/cert-handler/, function (req, res) {
+// if (req.query.cert === "2") {
+//    currentUser.certNo = 2;
+//    res.redirect('update-contact');
+//  } else if (req.query.cert === "3") {
+//    res.redirect('out-of-date');
+//  } else if (req.query.cert === "4") {
+//    currentUser.certNo = 4;
+//    if (currentUser.matD == true) {
+//      res.redirect('pregnant');
+//    } else if (currentUser.medE == true) {
+//      res.redirect('medical');
+//    } else {
+//      res.redirect('cant-find-cert');
+//    }
+//  } else {
+//    res.redirect('found');
+//  }
+//});
 
 // ask if they had a BSA exemption
 router.get(/bsa-exemptions/, function (req, res) {
@@ -505,18 +607,23 @@ router.get('/challenge/dwp-exemptions-handler', function (req, res) {
     if (bens == "is" || bens == "esa") {
       currentUser.esaH = true;
       topCat = "H";
+        currentUser.hasBen = 1;
     } else if (bens == "jsa") {
       currentUser.jsaK = true;
       topCat = "K";
+        currentUser.hasBen = 1;
     } else if (bens == "pc") {
       currentUser.pcS = true;
       topCat = "S";
+        currentUser.hasBen = 1;
     } else if (bens == "uc") {
       currentUser.uc = true;
       topCat = "U";
+        currentUser.hasBen = 1;
     }
     content.updateContent(topCat);
   }
+    currentUser.hasBen = 0;
   if (currentUser.ticked == "D") {
     nextBens = 'pregnant';
   }
@@ -560,10 +667,23 @@ router.get(/illnesses-handler/, function (req, res) {
 router.get(/medical-handler/, function (req, res) {
   if (req.query.medical == 'yes') {
     res.redirect('illnesses');
-  } else {
-    res.redirect(outcomeRedirect() );
+} if (req.query.medical == 'no' && currentUser.hasBen === 1){ 
+    res.redirect('proof-of-benefit');
+  } if (req.query.medical == 'no' && currentUser.certNo === 3){ 
+    res.redirect('out-of-date');
+  } if (req.query.medical == 'no' && currentUser.certNo === 4){ 
+    res.redirect('cant-find');
+
   }
 });
+
+//router.get(/medical-handler/, function (req, res) {
+//  if (req.query.medical == 'yes') {
+//    res.redirect('illnesses');
+//  } else {
+//    res.redirect(outcomeRedirect() );
+//  }
+//});
 
 //new
 outcomeRedirect = function() {
@@ -845,7 +965,8 @@ router.get(/proof-of-benefit/, function (req, res) {
     pcn : currentUser.pcn,
     checkdate : content.checkDate,
       exemption : content.exemption,
-      title : content.title
+      title : content.title,
+      chosenBen : content.chosenBen
   });
 });
 
@@ -853,7 +974,8 @@ router.get(/proof-of-benefit/, function (req, res) {
 router.get('/challenge/dwp-exemptions/', function (req, res) {
   res.render('challenge/dwp-exemptions', {
     ticked : currentUser.ticked,
-    checkdate : content.checkDate
+    checkdate : content.checkDate,
+      hasBen : currentUser.hasBen
   });
 });
 

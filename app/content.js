@@ -32,6 +32,7 @@ var content = {
       case "H":
         this.title = 'Income Support or income-related Employment and Support Allowance';
         this.description = 'gets Income Support or income-related Employment and Support Allowance (Box "H")';
+            this.chosenBen = 'Income Support or income-related Employment and Support Allowance';
         break;
       case "I":
         this.title = 'Income related Employment Support Allowance';
@@ -40,6 +41,7 @@ var content = {
       case "K":
         this.title = 'Income based Jobseekers Allowance';
         this.description = 'gets income-based Jobseekers Allowance (Box "K")';
+            this.chosenBen = 'income-based Jobseekers Allowance';
         break;
       case "S":
         this.title = "Your partner's Pension Credit guarantee credit award";

@@ -23,16 +23,18 @@
     
     <div class="column-two-thirds">
          
-    <h1 class="heading-large">We need proof you were receiving {{title}} between {{checkdate}}</h1>
+    <h1 class="heading-large">We need proof you were receiving {{chosenBen}} between {{checkdate}}</h1>
           
       
       <p>You will need to send us a copy of either:</p>
       
       <ul class="list list-bullet">
-        <li>an {{title}} letter</li>
+        <li>an {{chosenBen}} letter</li>
         <li>a letter from the Department of Work and Pensions</li>
         <li>a letter from the Jobcentre</li>
       </ul>
+        
+        <p><a href="examples">Click here for examples of proof that you can send</a></p>
         
       <p>Your penalty charge notice is on hold for 10 days.</p>
             
@@ -48,13 +50,13 @@
 	<p>Send the image to our email address. You must include your Penalty Charge Notice reference number 01234567890 in the email.</p>
         
 
-	      <ul class="list list-bullet">
+	      <p>
               {% if (ticked == 'K') %}
-        <li><a href="#">nhsbsa.decs@nhsbsa.nhs.uk</a></li>
+        <a href="#">nhsbsa.decs@nhsbsa.nhs.uk</a>
               {% else %}
-        <li><a href="#">nhsbsa.pecs@nhsbsa.nhs.uk</a></li>
+        <a href="#">nhsbsa.pecs@nhsbsa.nhs.uk</a>
             {% endif %}
-      </ul>
+      </p>
         
         	<p>If you have access to a scanner, we will also accept a scanned image of your proof sent as an email attachment.</p>
       

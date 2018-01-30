@@ -13,7 +13,8 @@ var users = [
     addressLineOne : "12 Old Oak Road",
       addressLineTwo : null,
       addressTown : "Throckley",
-      addressPostCode : "NE67 9AD"
+      addressPostCode : "NE67 9AD",
+          hasBen : 0
   },
   {
     firstName : "Michelle",
@@ -27,7 +28,8 @@ var users = [
           addressLineOne : "12 Old Oak Road",
       addressLineTwo : null,
       addressTown : "Throckley",
-      addressPostCode : "NE67 9AD"
+      addressPostCode : "NE67 9AD",
+      hasBen : 0
   },
   {
     firstName : "Imran",
@@ -41,21 +43,8 @@ var users = [
           addressLineOne : "12 Old Oak Road",
       addressLineTwo : null,
       addressTown : "Throckley",
-      addressPostCode : "NE67 9AD"
-  },
-      {
-    firstName : "Lizzie",
-    lastName : "Dutton",
-    pcn : 647275412,
-    ticked: "F",
-    gender : 'F',
-    ppcF : true,
-    charge : 8.60,
-    penalty : 43.00,
-          addressLineOne : "12 Old Oak Road",
-      addressLineTwo : null,
-      addressTown : "Throckley",
-      addressPostCode : "NE67 9AD"
+      addressPostCode : "NE67 9AD",
+      hasBen : 0
   },
       {
     firstName : "Max",
@@ -83,7 +72,9 @@ var users = [
           addressLineOne : "12 Old Oak Road",
       addressLineTwo : null,
       addressTown : "Throckley",
-      addressPostCode : "NE67 9AD"
+      addressPostCode : "NE67 9AD",
+      chosenBen: "income-based Jobseekers Allowance",
+      original : 1
   },
   {
     firstName : "Larry",
@@ -97,7 +88,9 @@ var users = [
           addressLineOne : "12 Old Oak Road",
       addressLineTwo : null,
       addressTown : "Throckley",
-      addressPostCode : "NE67 9AD"
+      addressPostCode : "NE67 9AD",
+      chosenBen: "Income Support or income-related Employment and Support Allowance",
+      original : 1
   },
   {
     firstName : "Mary",

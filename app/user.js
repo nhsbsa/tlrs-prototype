@@ -32,7 +32,9 @@ var defaults = {
   addressPostCode : "NE1 0LD",
   fullAddress : "3 Old Street, Old Town, NE1 0LD",
   updated : 0,
-  status : 0
+  status : 0,
+    hasBen : 0,
+    originalBen : 1
 };
 
 var user = {
