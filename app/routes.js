@@ -434,11 +434,8 @@ router.get('/medical/', function (req, res) {
   });
 });
 
-
-
-
 // Ask for a cert number
-router.get('/cert-number/', function (req, res) {
+router.get(/cert-number/, function (req, res) {
   res.render('challenge/cert-number', {
     title : content.title,
       certNo : currentUser.certNo,
@@ -446,6 +443,8 @@ router.get('/cert-number/', function (req, res) {
 
   });
 });
+
+
 
      //check cert number
 router.get(/cert-handler/, function (req, res) {
