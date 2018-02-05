@@ -426,7 +426,7 @@ router.get(/did-you-handler/, function (req, res) {
   }
 });
 
-router.get('/challenge/medical/', function (req, res) {
+router.get('/medical/', function (req, res) {
   res.render('challenge/medical', {
     certNo : currentUser.certNo,
       ticked : currentUser.ticked
@@ -648,6 +648,38 @@ router.get(/pregnancy-handler/, function (req, res) {
   }
 });
 
+router.get(/medical-handler/, function (req, res) {
+  if (req.query.medical == 'yes') {
+    res.redirect('illnesses');
+  } else if (req.query.medical == 'no' && currentUser.ticked === "K"){ 
+    res.redirect('proof-of-benefit');
+    }
+   else if (req.query.medical == 'no' && currentUser.ticked === "H"){ 
+    res.redirect('proof-of-benefit');
+      }  
+   else if (req.query.medical == 'no' && currentUser.certNo === 3){ 
+    res.redirect('out-of-date');
+    }
+   else if (req.query.medical == 'no' && currentUser.certNo === 4){ 
+    res.redirect('cant-find');           
+   }
+});
+
+//router.get(/medical-handler/, function (req, res) {
+//  if (req.query.medical == 'yes') {
+//    res.redirect('illnesses');
+//  } if (req.query.medical == 'no' && currentUser.ticked === "K"){ 
+//    res.redirect('proof-of-benefit');
+//  } if (req.query.medical == 'no' && currentUser.ticked === "H"){ 
+//    res.redirect('proof-of-benefit');
+//  } if (req.query.medical == 'no' && currentUser.certNo === 3){ 
+//    res.redirect('out-of-date');
+//  } if (req.query.medical == 'no' && currentUser.certNo === 4){ 
+//    res.redirect('cant-find');
+//  }
+//});
+
+
 //new
 router.get(/illnesses-handler/, function (req, res) {
   if (req.query.medical == 'yes') {
@@ -662,21 +694,6 @@ router.get(/illnesses-handler/, function (req, res) {
   }
 });
 
-
-
-router.get(/medical-handler/, function (req, res) {
-  if (req.query.medical == 'yes') {
-    res.redirect('illnesses');
-} if (req.query.medical == 'no' && currentUser.ticked === "K"){ 
-    res.redirect('proof-of-benefit');
-  }if (req.query.medical == 'no' && currentUser.ticked === "H"){ 
-    res.redirect('proof-of-benefit');
-  } if (req.query.medical == 'no' && currentUser.certNo === 3){ 
-    res.redirect('out-of-date');
-  } if (req.query.medical == 'no' && currentUser.certNo === 4){ 
-    res.redirect('cant-find');
-  }
-});
 
 //router.get(/medical-handler/, function (req, res) {
 //  if (req.query.medical == 'yes') {
