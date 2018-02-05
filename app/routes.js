@@ -426,10 +426,10 @@ router.get(/did-you-handler/, function (req, res) {
   }
 });
 
-router.get('/medical/', function (req, res) {
+router.get('/challenge/medical/', function (req, res) {
   res.render('challenge/medical', {
     certNo : currentUser.certNo,
-      hasBen : currentUser.hasBen
+      ticked : currentUser.ticked
 
   });
 });
@@ -662,17 +662,19 @@ router.get(/illnesses-handler/, function (req, res) {
   }
 });
 
-//new
+
+
 router.get(/medical-handler/, function (req, res) {
   if (req.query.medical == 'yes') {
     res.redirect('illnesses');
-} if (req.query.medical == 'no' && currentUser.hasBen === 1){ 
+} if (req.query.medical == 'no' && currentUser.ticked === "K"){ 
+    res.redirect('proof-of-benefit');
+  }if (req.query.medical == 'no' && currentUser.ticked === "H"){ 
     res.redirect('proof-of-benefit');
   } if (req.query.medical == 'no' && currentUser.certNo === 3){ 
     res.redirect('out-of-date');
   } if (req.query.medical == 'no' && currentUser.certNo === 4){ 
     res.redirect('cant-find');
-
   }
 });
 

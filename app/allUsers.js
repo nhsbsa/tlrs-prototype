@@ -74,7 +74,7 @@ var users = [
       addressTown : "Throckley",
       addressPostCode : "NE67 9AD",
       chosenBen: "income-based Jobseekers Allowance",
-      original : 1
+      hasBen : 1
   },
   {
     firstName : "Larry",
@@ -90,7 +90,7 @@ var users = [
       addressTown : "Throckley",
       addressPostCode : "NE67 9AD",
       chosenBen: "Income Support or income-related Employment and Support Allowance",
-      original : 1
+      hasBen : 1
   },
   {
     firstName : "Mary",
