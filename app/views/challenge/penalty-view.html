@@ -34,16 +34,13 @@
         <h3 class="heading-medium">Don’t delay</h3>
         
         <p>
-          You have <span class="strong">28 days</span> to start paying or challenge this Penalty Charge Notice (by {{challengeDate}}). If you don’t respond, an extra fine of £50 will be added to these charges.
+          You have <span class="strong">28 days</span> to pay or challenge this Penalty Charge Notice (by {{challengeDate}}). If you don’t respond, an extra fine of £50 will be added to these charges.
         </p>
         
       </div>
-        
       
     </div>
       
-      
-    
   </div>
     
   <div class="grid-row">
@@ -52,29 +49,29 @@
       
       <div class="info-panel highlight ">
         
-        <h2 class="heading-large">Charges payable</h2>
+        <h2 class="heading-large">Charges to pay</h2>
+          
+          <div class="chargesTable">
         
-          <table class="chargesTable">
+          <table>
   <tr>
             {% if (ticked == 'K') %}
             <td>Dental charges</td>
         {% else %}
             <td>Prescription charges</td>
         {% endif %}
-      <td></td>
     <td>£8.60</td> 
   </tr>
   <tr>
     <td>Penalty charge</td>
-      <td></td>
     <td>£60</td> 
   </tr>
                 <tr>
-    <td>Total amount</td>
-      <td></td>
-    <td>£68.60</td> 
+    <td><span class="strong">Total amount</span></td>
+    <td><span class="strong">£68.60</span></td> 
   </tr>
 </table>
+              </div>
         
           <br>
           <br>
@@ -125,11 +122,6 @@
     <td>Address</td>
 
     <td>{{address}}</td> 
-  </tr>
-                <tr>
-    <td>Date of birth</td>
-
-    <td> 01 January 1985</td> 
   </tr>
                                         <tr>
     <td>Exemption reason ticked</td>
@@ -189,27 +181,26 @@
             Challenge
           </h2>
           
-          <p>You can make a challenge if you know that you were entitled to free {% if (ticked == 'K') %}
-            dental treatment.
-          {% else %}
-          prescriptions.
-          {% endif %}</p>
+          <p>Find out if you can challenge your Penalty Charge Notice.</p>
 
           
-                    <form class="form" action="info-page">
+                    <form class="form" action="challenge-options">
               
         <div class="form-group">
-          <input class="button" type="submit" value="Challenge">
+          <input class="button" type="submit" value="Next">
         </div>
+                        
+                                            <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                        
           
               </form>
 
-          <p>If you were not entitled to free {% if (ticked == 'K') %}
-
-            dental treatment 
-          {% else %}
-            prescriptions
-          {% endif %} but you think you have an <a href="#">exceptional reason not to pay - find out more</a>.</p>
+          <p> </p>
 
           
         </div>

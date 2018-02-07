@@ -1,0 +1,128 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHS Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+  <div class="grid-row">
+    
+    <div class="column-full">
+      
+      <div class="phase-banner">
+        
+        <p>
+          <strong class="phase-tag">ALPHA</strong>
+          <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+        </p>
+        
+      </div>
+      
+      <div class="heading-group">
+        
+        <p>Challenge a Penalty Charge Notice</p>
+        
+        <h1 class="heading-xlarge">Your challenge options</h1>
+        
+      </div>
+      
+    </div>
+      
+  </div>
+    
+      <div class="grid-row">
+    
+    <div class="column-half">
+      
+      <div class="info-panel highlight">
+        
+        <h2 class="heading-large">You were entitled to {% if (ticked == 'K') %}
+            dental treatment
+          {% else %}
+          free prescriptions
+          {% endif %}</h2>
+
+        
+        <p>
+          We will help you sort this out as quickly as possible.
+        </p>
+          
+          <p>
+            It may be that your personal details on your exemption or benefit don’t match the details at your {% if (ticked == 'K') %}
+            dental practice.
+          {% else %}
+          GP surgery.
+          {% endif %}
+            We will ask a few simple questions so that we can confirm your exemption.  
+          </p>
+          
+          
+          <form class="form" action="info-page">
+              
+        <div class="form-group">
+<!--Usually only used on start pages-->
+          <input class="button button-get-started" type="submit" value="Start">
+        </div>
+          
+              </form>
+          <br>
+          <br>
+<br>
+        <br>
+                         
+      </div>   
+      
+    </div>
+
+    
+    <div class="column-half">
+      
+      <div class="info-panel highlight">
+        
+        <h2 class="heading-large">You were not entitled to free {% if (ticked == 'K') %}
+            dental treatment
+          {% else %}
+           prescriptions
+          {% endif %}
+          but have an exceptional reason
+          </h2>
+          
+          <p>If you were not entitled to free {% if (ticked == 'K') %}
+            dental treatment
+          {% else %}
+          free prescriptions
+          {% endif %} but have an exceptional reason why you made the claim, you can ask for a review of your Penalty Charge Notice.</p>
+          
+          <p>
+            Find out if you can ask for a review. 
+          </p>
+
+          
+                    <form class="form" action="exep-circs">
+              
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+                        
+                                            <br>
+                    <br>
+
+                        
+              </form>
+
+          <p> </p>
+
+          
+        </div>
+          
+        </div>
+        
+      </div>
+      
+  
+</main>
+
+{% endblock %}

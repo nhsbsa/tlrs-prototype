@@ -743,3 +743,23 @@ table {
   resize: none;
 }
 
+.chargesTable tr td:nth-child(1) {
+    width: 86%;
+    font-weight: 100;
+    padding-right: 0;
+}
+
+.contactTable tr td:nth-child(1) {
+    width: 40%;
+    font-weight: 700;
+    padding-right: 0;
+    vertical-align: top;
+}
+
+.contactTable tr td:nth-child(2) {
+    width: 60%;
+    font-weight: 100;
+    padding-right: 0;
+}
+
+
