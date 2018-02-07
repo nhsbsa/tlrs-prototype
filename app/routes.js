@@ -1117,3 +1117,11 @@ router.get('/challenge/over-uc/', function (req, res) {
     checkdate : content.checkDate
   });
 });
+
+router.get('/challenge/exep-circs/', function (req, res) {
+  res.render('challenge/exep-circs', {
+    title : content.title,
+    ticked : currentUser.ticked,
+      hasBen : currentUser.hasBen
+  });
+});
