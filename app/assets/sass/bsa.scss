@@ -762,4 +762,17 @@ table {
     padding-right: 0;
 }
 
+.circle {
+    display: inline-block;
+    border-radius: 50%;
+    background: #0b0c0c;
+    color: #fff;
+    font-family: "ntatabularnumbers", "nta", Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    margin: 0.5em 0em 0em 1em;
+  }
+
+
 

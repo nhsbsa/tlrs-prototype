@@ -12,7 +12,7 @@
     <div class="column-full">
       <div class="phase-banner">
           <p>
-            <strong class="phase-tag">ALPHA</strong>
+            <strong class="phase-tag">BETA</strong>
             <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
           </p>
         </div>
@@ -51,66 +51,89 @@
           <ul class="list list-bullet">
             <li>full name</li>
               <li>date of birth</li>
-              <li>Penalty Charge reference number {{ref}}</li>
+              <li>Penalty Charge Notice reference  number {{ref}}</li>
           </ul>
-          
+    
         <div class="contactTable">
           <table>
               <tr>
                 <td>Email</td>
-                <td>Email us at nhsbsa.pecs@nhsbsa.nhs.uk {nhsbsa.decs@nhsbsa.nhs.uk}   
-                We reply within 2 working days.
+                <td>Email us at {% if (ticked == 'K') %}
+                    <a href="mailto:nhsbsa.decs@nhsbsa.nhs.uk">nhsbsa.decs@nhsbsa.nhs.uk</a>
+                    {% else %}
+                    <a href="mailto:nhsbsa.decs@nhsbsa.nhs.uk">nhsbsa.pecs@nhsbsa.nhs.uk</a>
+                    {% endif %}
+                <p>We reply within 2 working days.</p>
                 </td> 
               </tr>
               <tr>
                 <td>Online</td>
                   <td>
                       <p>Use our <a href="#">online contact form</a></p>
-                        <p>In the subject box select ‘Prescription penalty charge’ {‘Dental penalty charge’}. We reply within 2 working days.</p>
+                        <p>In the subject box select
+                            {% if (ticked == 'K') %}
+                            ‘Dental penalty charge.’
+                            {% else %}
+                            ‘Prescription penalty charge.’
+                            {% endif %}
+                            We reply within 2 working days.</p>
                   </td> 
               </tr>
             <tr>
                 <td>Phone</td>
-                <td>£68.60</td> 
+                <td>
+                    <p>
+                        {% if (ticked == 'K') %}
+                        Call us on: 0300 330 1293
+                        {% else %}
+                        Call us on: 0300 330 9291
+                        {% endif %}
+                    </p>
+                                        <p>
+                        Lines are available Monday to Friday from 8am to 6pm, and Saturday from 9am to 3pm, UK time
+                    </p>
+                    <p>
+                        If you're deaf or hard of hearing and you have a textphone (sometimes called a minicom), you can contact us using the Text Relay Service. Dial 18001 and then {% if (ticked == 'K') %}
+                        0300 330 1293.
+                        {% else %}
+                        0300 330 9291
+                        {% endif %}
+                    </p>
+                </td> 
               </tr>
               <tr>
                 <td>Post</td>
-                <td>£68.60</td> 
+                <td>Write to us at:  {% if (ticked == 'K') %}
+                    Dental
+                    {% else %}
+                    Prescriptions
+                    {% endif %}
+                    Penalty Charges Team, NHSBSA, Bridge House, 152 Pilgrim Street, Newcastle Upon Tyne, NE1 6SN</td> 
               </tr>
         </table>
       </div>
-          
+          <br>
           <p>
-          If you were not entitled to free {% if (ticked == 'K') %}
-            dental treatment
-          {% else %}
-          prescriptions
-          {% endif %} but have an exceptional reason why you made the claim at the time, you can ask us to review your Penalty Charge Notice. <a href="how-review">Find out how to ask for a review.</a>
+              We offer a telephone translation service and provide documents in large print and braille on request.
           </p>
           
-          <h2 class="heading-medium">Reasons we can’t accept</h2>
+          <h2 class="heading-medium">What happens next?</h2>
+          
+          <h2 class="heading-small">If the review is successful</h2>
           
           <p>
-            We cannot review your Penalty Charge Notice if you:
+            Your penalty charge will be reduced or removed. However you will still need to pay the original {% if (ticked == 'K') %} dental
+              {% else %}
+              prescription
+              {% endif %}
+              treatment charge.
           </p>
-        
-        <ul class="list list-bullet">
-            {% if (ticked == 'K') %}
-            <li>thought your {{title}} entitled you to claim</li>
-          {% elseif (ticked == 'H') %}
-            <li>thought your {{title}} entitled you to claim</li>
-            {% else %}
-            <li>thought your {{title}} was valid, but it had expired</li>
-            <li>thought your {{title}} would automatically renew </li>
-          {% endif %}
-          <li>feel you were misadvised by staff at your {% if (ticked == 'K') %}
-            dental practice
-          {% else %}
-          GP surgery or pharmacy
-          {% endif %}</li>
-        </ul>
           
-          <a href="#">What to do if you’ve realised you’re not entitled to a review</a>
+                    <h2 class="heading-small">If the review is unsuccessful</h2>
+          
+          <p>
+              You will need to pay both the penalty charge and the original prescription {dental treatment} charge.
+          </p>
           
       </div>
 
