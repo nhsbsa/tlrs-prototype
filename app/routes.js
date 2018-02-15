@@ -1125,3 +1125,16 @@ router.get('/challenge/exep-circs/', function (req, res) {
       hasBen : currentUser.hasBen
   });
 });
+
+router.get('/challenge/challenge-options/', function (req, res) {
+  res.render('challenge/challenge-options', {
+    ticked : currentUser.ticked
+  });
+});
+
+router.get('/challenge/how-review/', function (req, res) {
+  res.render('challenge/how-review', {
+    ticked : currentUser.ticked,
+      ref : currentUser.pcn
+  });
+});
