@@ -34,7 +34,7 @@
         <h3 class="heading-medium">Don’t delay</h3>
         
         <p>
-          You have <span class="strong">28 days</span> to pay or challenge this Penalty Charge Notice (by {{challengeDate}}). If you don’t respond, an extra fine of £50 will be added to these charges.
+          You have <span class="strong">28 days</span> to pay or challenge this Penalty Charge Notice (by {{challengeDate}}). If you don’t respond, an extra fine of up to £50 will be added to these charges.
         </p>
         
       </div>
@@ -149,6 +149,8 @@
           You will need a debit or credit card.
         </p>
           
+          <br>
+          <br>
           
           <form class="form" action="#">
               
@@ -159,13 +161,13 @@
               </form>
           <br>
           <br>
+                    
+                    
                     <br>
                     <br>
                     <br>
                     <br>
-                    <br>
-                    <br>
-
+<br>
 
                          
       </div>   
@@ -181,7 +183,12 @@
             Challenge
           </h2>
           
-          <p>Find out if you can challenge your Penalty Charge Notice.</p>
+          <p>You can challenge if you were entitled to {% if (ticked == 'K') %}
+                          dental treatment
+          {% else %}
+              free prescriptions,
+              {% endif %}
+               or had a valid prescription prepayment certificate.</p>
 
           
                     <form class="form" action="info-page">
