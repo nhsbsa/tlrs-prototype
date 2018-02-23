@@ -6,6 +6,16 @@
 
 {% block content %}
 
+<style>
+  .contactTable tr td:nth-child(2)
+  {
+    font-weight:400;
+  }
+  .contactTable td{
+  border-bottom: 1px solid #bfc1c3;
+}
+</style>
+
 <main id="content" role="main">
   
     <div class="grid-row">
@@ -39,30 +49,46 @@
           <h2 class="heading-medium">What you need to do</h2>
                 
         <p>
-          You will need to contact us and explain the exceptional reason why you claimed a free prescription.
+          You need to contact us and explain the exceptional reason why you claimed a free prescription.
         </p>
+
+          <h2 class="heading-medium">What happens next?</h2>
+
+          <h3 class="heading-small">If the review is successful</h3>
+          
+          <p>
+            Your penalty charge will be reduced or removed. However you will still need to pay the original {% if (ticked == 'K') %} dental
+              {% else %}
+              prescription
+              {% endif %}
+              treatment charge.
+          </p>
+    
+
+                    <h3 class="heading-small">If the review is unsuccessful</h3>
+          
+          <p>
+              You will need to pay both the penalty charge and the original prescription charge.
+          </p>
+
           
           <h2 class="heading-medium">How to contact us</h2>
           
           <p>
-            When you contact us you must include your:
+            When you contact us you must also include your:
           </p>
           
           <ul class="list list-bullet">
             <li>full name</li>
               <li>date of birth</li>
-              <li>Penalty Charge Notice reference  number {{ref}}</li>
+              <li>Penalty Charge Notice reference number 7489202837</li>
           </ul>
     
-        <div class="contactTable">
+        <div class="contactTable" >
           <table>
               <tr>
                 <td>Email</td>
-                <td>Email us at {% if (ticked == 'K') %}
-                    <a href="mailto:nhsbsa.decs@nhsbsa.nhs.uk">nhsbsa.decs@nhsbsa.nhs.uk</a>
-                    {% else %}
-                    <a href="mailto:nhsbsa.decs@nhsbsa.nhs.uk">nhsbsa.pecs@nhsbsa.nhs.uk</a>
-                    {% endif %}
+                <td>Email us at: <a href="mailto:nhsbsa.pecs@nhsbsa.nhs.uk">nhsbsa.pecs@nhsbsa.nhs.uk</a>
                 <p>We reply within 2 working days.</p>
                 </td> 
               </tr>
@@ -70,12 +96,8 @@
                 <td>Online</td>
                   <td>
                       <p>Use our <a href="#">online contact form</a></p>
-                        <p>In the subject box select
-                            {% if (ticked == 'K') %}
-                            ‘Dental penalty charge.’
-                            {% else %}
-                            ‘Prescription penalty charge.’
-                            {% endif %}
+                        <p>In the subject box select ‘Prescription penalty charge.’<BR>
+                
                             We reply within 2 working days.</p>
                   </td> 
               </tr>
@@ -103,37 +125,23 @@
               </tr>
               <tr>
                 <td>Post</td>
-                <td>Write to us at:  {% if (ticked == 'K') %}
+                <td>
+                <P>Write to us at:  {% if (ticked == 'K') %}
                     Dental
                     {% else %}
                     Prescriptions
                     {% endif %}
-                    Penalty Charges Team, NHSBSA, Bridge House, 152 Pilgrim Street, Newcastle Upon Tyne, NE1 6SN</td> 
+                    Penalty Charges Team, NHSBSA, Bridge House, 152 Pilgrim Street, Newcastle Upon Tyne, NE1 6SN</P>
+                    </td> 
               </tr>
         </table>
       </div>
           <br>
-          <p>
+          <p class="panel panel-border-wide">
               We offer a telephone translation service and provide documents in large print and braille on request.
           </p>
           
-          <h2 class="heading-medium">What happens next?</h2>
-          
-          <h2 class="heading-small">If the review is successful</h2>
-          
-          <p>
-            Your penalty charge will be reduced or removed. However you will still need to pay the original {% if (ticked == 'K') %} dental
-              {% else %}
-              prescription
-              {% endif %}
-              treatment charge.
-          </p>
-          
-                    <h2 class="heading-small">If the review is unsuccessful</h2>
-          
-          <p>
-              You will need to pay both the penalty charge and the original prescription {dental treatment} charge.
-          </p>
+
           
       </div>
 

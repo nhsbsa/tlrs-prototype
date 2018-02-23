@@ -1,0 +1,92 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Pay a Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+  <div class="grid-row">
+    <div class="column-full">
+      <div class="phase-banner">
+          <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+          </p>
+        </div>
+    </div>
+  </div>
+    
+  <div class="grid-row">
+    <!--div class="column-two-thirds">
+
+    <div class="details">
+      <h2 class="heading-medium">Pre-paymentetails</h2>
+      <p class="valid">Valid dates</p>
+      <h2 class="heading-medium bignumbers"><span>from:</span> 20 July 2016</h2>
+      <h2 class="heading-medium bignumbers"><span>to:</span> 21 July 2017</h2> 
+    </div>
+    </div-->
+    
+    <div class="column-two-thirds">
+      
+<!--
+      <div class="done-panel">
+        
+        <h1 class="heading-large"><span id="done-tick"> </span>Done</h1>
+        <h2 class="heading-medium">Your Penalty Charge Notice has been deleted.</h2>
+    
+      </div>
+-->
+      
+      <div class="done-panel">
+        <h1 class="heading-large"><span id="done-tick"> </span>Thank you</h1>
+        <h2 class="heading-large">We have found your {{title}}.</h2>
+      </div>
+            
+<!--      <p>We have updated your {{title}} with your new details.</p>           -->
+      
+      <p>Penalty charge notice {{ref}} has been deleted from our system.</p>           
+      
+      <ul class="list options-list">
+        <li><a class="icon print-icon" href="javascript:window.print();">Print this page</a></li>
+      </ul>
+    
+      <h3 class="heading-medium">
+        How to avoid future penalties
+      </h3>
+      
+      <ul class="list list-bullet">
+        <li>
+          Make sure that your GP and dentist have your correct home address
+        </li>
+        <li>
+          If you receive benefits or have an exemption certificate, make sure that the relevant organisations have your correct home address
+        </li>
+	     <li>
+         If you have an exemption certificate, make sure that it does not expire
+        </li>
+        <li>
+          For more information visit <a href="">www.nhsbsa.nhs.uk/penaltycharges</a>
+        </li>
+      </ul>
+        
+  <h2 class="heading-medium">Feedback</h2>
+  
+  <p>
+    Leaving feedback only takes five minutes. Your comments are extremely helpful and will help us to provide a better service.
+  </p>
+  <p>
+    <a class="" href="feedback">Leave feedback</a>
+  </p> 
+      
+  <p id="usermail"class="visually-hidden">{{hasmail}}</p>
+      </div>
+    
+  </div>
+
+</main>
+
+{% endblock %}

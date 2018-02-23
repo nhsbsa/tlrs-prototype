@@ -1,0 +1,156 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Challenge a Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .contactTable tr td:nth-child(2)
+  {
+    font-weight:400;
+  }
+  .contactTable td{
+  border-bottom: 1px solid #bfc1c3;
+}
+</style>
+
+<main id="content" role="main">
+  
+    <div class="grid-row">
+    <div class="column-full">
+      <div class="phase-banner">
+          <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+          </p>
+        </div>
+    </div>
+  </div>
+
+    
+  <div class="grid-row">
+    
+    <div class="column-two-thirds">
+<div class="heading-group">
+        
+        <p>Challenge a Penalty Charge Notice</p>
+        
+        <h1 class="heading-large">Asking for a Penalty Charge Notice review</h1>
+        
+      </div>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+          
+          <h2 class="heading-medium">What you need to do</h2>
+                
+        <p>
+          You need to contact us and explain the exceptional reason why you claimed a free prescription.
+        </p>
+
+          <h2 class="heading-medium">What happens next?</h2>
+        <div class="grid-row">
+          <div class="column-half">
+          <h3 class="heading-small">If the review is successful</h3>
+          
+          <p>
+            Your penalty charge will be reduced or removed. However you will still need to pay the original {% if (ticked == 'K') %} dental
+              {% else %}
+              prescription
+              {% endif %}
+              treatment charge.
+          </p>
+          </div>
+          <div class="column-half">
+                    <h3 class="heading-small">If the review is unsuccessful</h3>
+          
+          <p>
+              You will need to pay both the penalty charge and the original prescription charge.
+          </p>
+          </div>
+          </div>
+          
+          <h2 class="heading-medium">How to contact us</h2>
+          
+          <p>
+            When you contact us you must also include your:
+          </p>
+          
+          <ul class="list list-bullet">
+            <li>full name</li>
+              <li>date of birth</li>
+              <li>Penalty Charge Notice reference number 7489202837</li>
+          </ul>
+    
+        <div class="contactTable" >
+          <table>
+              <tr>
+                <td>Email</td>
+                <td>Email us at: <a href="mailto:nhsbsa.pecs@nhsbsa.nhs.uk">nhsbsa.pecs@nhsbsa.nhs.uk</a>
+                <p>We reply within 2 working days.</p>
+                </td> 
+              </tr>
+              <tr>
+                <td>Online</td>
+                  <td>
+                      <p>Use our <a href="#">online contact form</a></p>
+                        <p>In the subject box select ‘Prescription penalty charge.’<BR>
+                
+                            We reply within 2 working days.</p>
+                  </td> 
+              </tr>
+            <tr>
+                <td>Phone</td>
+                <td>
+                    <p>
+                        {% if (ticked == 'K') %}
+                        Call us on: 0300 330 1293
+                        {% else %}
+                        Call us on: 0300 330 9291
+                        {% endif %}
+                    </p>
+                                        <p>
+                        Lines are available Monday to Friday from 8am to 6pm, and Saturday from 9am to 3pm, UK time
+                    </p>
+                    <p>
+                        If you're deaf or hard of hearing and you have a textphone (sometimes called a minicom), you can contact us using the Text Relay Service. Dial 18001 and then {% if (ticked == 'K') %}
+                        0300 330 1293.
+                        {% else %}
+                        0300 330 9291
+                        {% endif %}
+                    </p>
+                </td> 
+              </tr>
+              <tr>
+                <td>Post</td>
+                <td>
+                <P>Write to us at:  {% if (ticked == 'K') %}
+                    Dental
+                    {% else %}
+                    Prescriptions
+                    {% endif %}
+                    Penalty Charges Team, NHSBSA, Bridge House, 152 Pilgrim Street, Newcastle Upon Tyne, NE1 6SN</P>
+                    </td> 
+              </tr>
+        </table>
+      </div>
+          <br>
+          <p class="panel panel-border-wide">
+              We offer a telephone translation service and provide documents in large print and braille on request.
+          </p>
+          
+
+          
+      </div>
+
+      </div>
+      
+    </div>
+  
+</main>
+
+{% endblock %}
