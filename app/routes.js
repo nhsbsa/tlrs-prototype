@@ -662,6 +662,8 @@ router.get(/medical-handler/, function (req, res) {
     }
    else if (req.query.medical == 'no' && currentUser.certNo === 4){ 
     res.redirect('cant-find');           
+   } else {
+       res.redirect('cant-find');
    }
 });
 
@@ -830,17 +832,31 @@ router.get('/challenge/check-address-handler/', function (req, res) {
       res.redirect('update-contact');
     } else if (currentUser.updated > 0) {
       res.redirect('check-your-answers');
-    } else if (currentUser.matD === true) {
-      res.redirect('pregnant');
-    } else if (currentUser.medE === true) {
-      res.redirect('medical');
-    } else if ( currentUser.benefitTest() ) {
-      res.redirect('proof-of-benefit');
     } else {
-      res.redirect('cant-find-cert');
+      res.redirect('check-your-answers');
     }
   }
 });
+
+//router.get('/challenge/check-address-handler/', function (req, res) {
+//  if (req.query.details == 'no') {
+//    res.redirect('/challenge/update-address');
+//  } else {
+//    if (currentUser.updated > 1) {
+//      res.redirect('update-contact');
+//    } else if (currentUser.updated > 0) {
+//      res.redirect('check-your-answers');
+//    } else if (currentUser.matD === true) {
+//      res.redirect('pregnant');
+//    } else if (currentUser.medE === true) {
+//      res.redirect('medical');
+//    } else if ( currentUser.benefitTest() ) {
+//      res.redirect('proof-of-benefit');
+//    } else {
+//      res.redirect('check-your-answers');
+//    }
+//  }
+//});
 
 // update address
 router.get('/challenge/update-address/', function (req, res) {
@@ -1036,14 +1052,24 @@ router.get('/challenge/cant-find-cert/', function (req, res) {
 });
 
 router.get('/challenge/answers-handler/', function (req, res) {
-  if (currentUser.benefitTest()) {
-    res.redirect('/challenge/contact');
-  } else if (currentUser.updated === 1) {
+if (currentUser.updated === 1) {
     res.redirect('/challenge/found');
   } else {
-    res.redirect('/challenge/contact');
-  }
+    res.redirect('dwp-exemptions');
+      currentUser.certNo = 4;
+    }
 });
+
+
+//router.get('/challenge/answers-handler/', function (req, res) {
+//  if (currentUser.benefitTest()) {
+//    res.redirect('/challenge/contact');
+//  } else if (currentUser.updated === 1) {
+//    res.redirect('/challenge/found');
+//  } else {
+//    res.redirect('/challenge/contact');
+//  }
+//});
 
 //router.get('/challenge/answers-handler/', function (req, res) {
 //  if (currentUser.benefitTest()) {
