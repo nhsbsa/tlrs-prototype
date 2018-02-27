@@ -832,8 +832,10 @@ router.get('/challenge/check-address-handler/', function (req, res) {
       res.redirect('update-contact');
     } else if (currentUser.updated > 0) {
       res.redirect('check-your-answers');
+        currentUser.certNo = 6;
     } else {
       res.redirect('check-your-answers');
+        currentUser.certNo = 6;
     }
   }
 });
