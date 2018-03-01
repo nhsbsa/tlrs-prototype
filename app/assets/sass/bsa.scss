@@ -603,6 +603,7 @@ table {
         width: 40%;
         font-weight: 0;
         padding-right :0;
+          vertical-align: text-top;
       }
       &:nth-child(3) {
         padding-right :0;
@@ -745,7 +746,7 @@ table {
 
 .chargesTable tr td:nth-child(1) {
     width: 86%;
-
+    font-weight: 500;
     padding-right: 0;
 }
 
