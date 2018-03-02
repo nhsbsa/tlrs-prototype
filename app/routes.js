@@ -589,8 +589,10 @@ router.get(/bsa-handler/, function (req, res) {
     }
     content.updateContent(topCat);
   } else {
-    if ( currentUser.benefitTest() ) {
+    if ( currentUser.benefitTest() && currentUser.gender == 'M' ) {
       next = 'medical';
+    } else if ( currentUser.benefitTest() && currentUser.gender == 'F' ) {
+        next = 'pregnant';
     } else {
       next = 'dwp-exemptions';
     }
@@ -882,11 +884,12 @@ router.get('/challenge/update-address-handler/', function (req, res) {
   currentUser.addressPostCode = req.query.postcode;
   currentUser.updateAddress();
   currentUser.updated++;
-  if (currentUser.updated > 1) {
-    res.redirect('update-contact');
-  } else {
+    currentUser.certNo = 6;
+//  if (currentUser.updated > 1) {
+//    res.redirect('update-contact');
+//  } else {
     res.redirect('check-your-answers');
-  }
+//  }
 });
 
 router.get('/challenge/check-name/', function (req, res) {
@@ -909,6 +912,7 @@ router.get('/challenge/update-name/', function (req, res) {
   res.render('challenge/update-name', {
     ref : currentUser.pcn,
     title : content.title,
+      certNo : currentUser.certNo
   });
 });
 
@@ -916,7 +920,12 @@ router.get('/challenge/update-name-handler/', function (req, res) {
   currentUser.firstName = req.query.firstname;
   currentUser.lastName = req.query.lastname;
   currentUser.updated++;
-  res.redirect('/challenge/check-dob');
+    if (currentUser.certNo == 6){
+        res.redirect('/challenge/check-your-answers');
+    } else {
+        res.redirect('/challenge/check-dob');
+    }
+  
 });
 
 router.get('/challenge/check-dob', function (req, res) {
@@ -940,7 +949,11 @@ router.get('/challenge/update-dob-handler', function (req, res) {
   currentUser.dobMonth = req.query.month;
   currentUser.dobYear = req.query.year;
   currentUser.updated++;
-  res.redirect('/challenge/check-address');
+      if (currentUser.certNo == 6){
+        res.redirect('/challenge/check-your-answers');
+    } else {
+        res.redirect('/challenge/check-address');
+    }
 });
 
 router.get('/challenge/update-telephone-handler/', function (req, res) {
