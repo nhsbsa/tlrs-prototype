@@ -31,7 +31,10 @@
         <h1 class="heading-large">What is your {{title}} number?</h1>
       </div>
             
-      <p>Enter the certificate number on your {{title}}.</p>
+      <p>Enter the number on your
+          {% if (ticked == 'D') or (ticked == 'E')%}
+            NHS
+        {% endif %} {{title}}.</p>
       
       
       <form action="cert-handler" method="get" class="form">

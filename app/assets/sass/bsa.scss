@@ -308,11 +308,13 @@ table {
         width: 30%;
         font-weight: 700;
         padding-right :0;
+                  vertical-align: text-top;
       }
       &:nth-child(2) {
         width: 40%;
         font-weight: 0;
         padding-right :0;
+          vertical-align: text-top;
       }
       &:nth-child(3) {
         padding-right :0;

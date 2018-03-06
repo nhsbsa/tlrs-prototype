@@ -810,9 +810,9 @@ router.get(/out-of-date/, function (req, res) {
 
 router.get('/challenge/contact/', function (req, res) {
   res.render('challenge/contact', {
-    ref : pcn.pcnNumber,
-    checkdate : content.checkDate,
-    hasemail : currentUser.hasEmail,
+    ref : currentUser.pcn,
+    name : currentUser.firstName + " " + currentUser.lastName,
+          hasemail : currentUser.hasEmail,
     hastext : currentUser.hasText
   });
 });
@@ -825,6 +825,7 @@ router.get('/challenge/check-address/', function (req, res) {
     address : currentUser.fullAddress
   });
 });
+
 
 router.get('/challenge/check-address-handler/', function (req, res) {
   if (req.query.details == 'no') {
@@ -1069,6 +1070,8 @@ router.get('/challenge/cant-find-cert/', function (req, res) {
 router.get('/challenge/answers-handler/', function (req, res) {
 if (currentUser.updated === 1) {
     res.redirect('/challenge/found');
+  } else if (currentUser.certNo == 2){
+      res.redirect('contact');
   } else {
     res.redirect('dwp-exemptions');
       currentUser.certNo = 4;

@@ -32,7 +32,9 @@
       <div class="done-panel">
         
         <h1 class="heading-large"><span id="done-tick"> </span>Thank you</h1>
-        <h2 class="heading-medium">We are now reviewing your case and will contact you within 2 working days.</h2>
+        <h2 class="heading-medium">We are now reviewing your case and will contact you within {% if hasemail === true or hastext === true %}2
+            {% else %}5
+            {% endif %}working days.</h2>
     
       </div>
 
@@ -40,12 +42,41 @@
       <p>No additional charges will be added during this time.</p>
       <p>You do not need to do anything until we contact you.</p>
       
-      <p class="panel panel-border-wide"><span class="bold">Michelle Doe</span><br>
-      Penalty charge notice 7489202837 has now been cancelled.</p>           
+      <p class="panel panel-border-wide"><span class="bold">{{name}}</span><br>
+      Penalty charge notice {{ref}}</p>           
       
       <ul class="list options-list">
         <li><a class="icon print-icon" href="javascript:window.print();">Print this page</a></li>
       </ul>
+        
+              {% if hasemail === true %}
+      <div class="review-row">
+        <div>
+          <p>Email address</p>
+        </div>
+        <div>
+          <p>{{email}}</p>
+        </div>
+        <div>
+          <p><a href="">Change</a></p>
+        </div>
+      </div>
+    {% endif %}
+    
+    {% if hastext === true %}
+      <div class="review-row">
+        <div>
+          <p>Phone number</p>
+        </div>
+        <div>
+          <p>{{telephone}}</p>
+        </div>
+        <div>
+          <p><a href="">Change</a></p>
+        </div>
+      </div>
+    </div>      
+    {% endif %}
     
         
       </div>

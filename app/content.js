@@ -10,23 +10,23 @@ var content = {
   updateContent : function (cat) {
     switch(cat) {
       case "D":
-        this.title = 'NHS maternity exemption certificate';
+        this.title = 'maternity exemption certificate';
         this.description = 'Has a valid maternity exemption certificate (Box "D")';
         break;
       case "E":
-        this.title = 'NHS medical exemption certificate';
+        this.title = 'medical exemption certificate';
         this.description = 'has a valid medical exemption certificate (Box "E")';
         break;
       case "F":
-        this.title = 'prescription prepayment certificate';
+        this.title = 'prescription prepayment certificate (PPC)';
         this.description = 'has a valid prescription prepayment certificate (Box "F")';
         break;
       case "L":
-        this.title = 'Help with health costs (HC2) certificate';
+        this.title = 'HC2 certificate';
         this.description = 'has a valid Help with health costs (HC2) certificate (Box "L")';
         break;
       case "M":
-        this.title = 'Tax credit certificate';
+        this.title = 'NHS Tax Credit Certificate';
         this.description = 'is entitled to, or named on, a valid NHS Tax Credit Exemption certificate (Box "M")';
         break;
       case "H":

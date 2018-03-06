@@ -36,7 +36,7 @@
       {% if (cert === 2)  %}
       <div class="review-row">
         <div>
-          <p>{{title}} reference</p>
+          <p>{{title}} number</p>
         </div>
         <div>
           <p>2345678910111</p>
@@ -98,8 +98,11 @@
              or 
             {% endif %}
             {% if hastext === true %}
-            phone call
+            Phone call
             {% endif %}
+            {% if (hasemail != true) and (hastext != true) %}
+            Post
+            {% endif %}  
           </p>
         </div>
         <div>
