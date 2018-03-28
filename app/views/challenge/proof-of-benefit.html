@@ -1,91 +1,210 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-  Pay a Penalty Charge Notice
+  Challenge a Penalty Charge Notice
 {% endblock %}
 
 {% block content %}
 
+<style>
+.example-icon-list p {
+    display: inline-block;
+    font-size: 16px;
+    padding-left: 1em;
+    vertical-align: middle;
+    margin-bottom: 0;
+  }
+  .list--check, {
+    list-style: none;
+    padding-left: 32px;
+  }
+  .list--check li::before {
+    background-image:
+  }
+  .standard {
+    vertical-align: middle;
+    padding: 0;
+    counter-reset: standard-counter;
+  }
+  .standard>li::before {
+    width: 10%;
+  }
+  .standard>li {
+    list-style: none;
+    display: block;
+    border-top: 1px solid #bfc1c3;
+    padding: 1em 0 0.5em 0;
+    margin: 0;
+    page-break-inside: avoid;
+  }
+  .updated-standard li .point {
+    width: 67%;
+  }
+  .standard>li .point {
+    padding-left: 3em
+  }
+  .standard>li .point {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  .circle-step {
+    min-width: 36px;
+    min-height: 38px;
+    line-height: 36px;
+  }
+  .circle {
+    display: inline-block;
+    border-radius: 50%;
+    background: #0b0c0c;
+    color: #fff;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    margin: 0em;
+  }
+  .panel_side {
+    display: block;
+    padding-top: 15px;
+    background-color: #DEE0E2;
+  }
+  .panel_side_inner {
+    width: auto;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 5px;
+  }
+  .display_field {
+    margin-bottom: 20px;
+    display: block;
+  }
+  .display_field_value h3 {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    text-transform: none;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  .income-img {
+    width: 283px;
+  }
+  @media(max-width:640px) {
+    .income-img {
+      width: 100%
+    }
+  }
+</style>
+
 <main id="content" role="main">
   
-      <div class="grid-row">
-      <div class="column-full">
-        <div class="phase-banner">
-            <p>
-              <strong class="phase-tag">BETA</strong>
-              <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
-            </p>
-          </div>
-      </div>
-    </div>
-
     <div class="grid-row">
+    <div class="column-full">
+      <div class="phase-banner">
+          <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+          </p>
+        </div>
+        <a class="link-back" href="penalty-view">Back</a>
+    </div>
+  </div>
+
+    
+  <div class="grid-row">
     
     <div class="column-two-thirds">
-         
-    <h1 class="heading-large">We need proof you were receiving {{chosenBen}} between {{checkdate}}</h1>
-          
-      
-      <p>You will need to send us a copy of either:</p>
-      
-      <ul class="list list-bullet">
-        <li>an {{chosenBen}} letter</li>
-        <li>a letter from the Department of Work and Pensions</li>
-        <li>a letter from the Jobcentre</li>
-      </ul>
+<div class="heading-group">
         
-        <p><a href="examples">Click here for examples of proof that you can send</a></p>
+        <p>Challenge a Penalty Charge Notice</p>
         
-      <p>Your penalty charge notice is on hold for 10 days.</p>
-            
-      <h2 class="heading-large">How to send proof</h2>
-      
-      <h3 class="heading-small">
-        It’s as easy as sending a photo on your phone
-      </h3>
-      
-      <p>If you have access to a digital camera or a mobile phone with a camera, you can take a digital photo of your proof. Make sure the image you have taken is clear and send it as an email attachment.</p>
+        <h1 class="heading-large">We need proof you were receiving {{chosenBen}} between {{checkdate}}.
+</h1>
         
+      </div>
+        
+        <h2 class="heading-medium">Type of proof we need to see</h2>
+        <p>We need a copy of one of the following:</p>
+<ul class="list list-bullet">
+<li>an {{chosenBen}} award letter</li>
+<li>a letter from the Department of Work and Pensions</li>
+<li>a letter from the Jobcentre</li>
+</ul>
 
-	<p>Send the image to our email address. You must include your Penalty Charge Notice reference number 01234567890 in the email.</p>
-        
+<details>
+              <summary><span class="summary">Check which types of proof are accepted</span></summary>
+                <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+<p>PUT IMAGE HERE</p>
 
-	      <p>
-              {% if (ticked == 'K') %}
+
+              </div>
+            </details>
+<h3 class="heading-medium" style="margin-top: 2em">Your deadline</h3>
+            <p>Your Penalty Charge Notice deadline will be extended by 14 days while you send us your proof. Don't delay.</p>
+
+<h3 class="heading-medium" style="margin-top: 2em">How to send your proof</h3>
+<h4 class="heading-small">It’s as easy as sending a photo on your phone
+</h4>
+                <ol class="standard">
+                    <li style="border-top: none;">
+                        <span class="circle circle-step">1</span>
+                        <div class="point">
+                            <p>Take a photo of your proof using a mobile phone or digital camera.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="circle circle-step" style="">2</span>
+                        <div class="point">
+                            <p>Check the image is clear and you can read the information.</p> 
+                        </div>
+                    </li>
+                    <li>
+                        <span class="circle circle-step" style="margin-top:0.8em">3</span>
+                        <div class="point">
+                            <p>Send the photo as an email attachment to:               {% if (ticked == 'K') %}
         <a href="#">nhsbsa.decs@nhsbsa.nhs.uk</a>
               {% else %}
         <a href="#">nhsbsa.pecs@nhsbsa.nhs.uk</a>
-            {% endif %}
-      </p>
-        
-        	<p>If you have access to a scanner, we will also accept a scanned image of your proof sent as an email attachment.</p>
-      
-      <h3 class="heading-small">
-        To send your proof by post
-      </h3>
-      
-      <p>Post a photocopy of your proof, including your penalty charge reference number {{ref}}, to:</p>
-        <p>
-                          {% if (ticked == 'K') %}
-        Dental Charges Team<br>
+            {% endif %}<br><br>You must include your name and Penalty Charge Reference number <span class="strong">{{ref}}</span>. </p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <span class="circle circle-step">4</span>
+                        <div class="point">
+                            <p>Once we receive your email with your proof, we will check it and contact you within 2 working days.
+<br></p>
+                        </div>
+                    </li>
+                </ol>
+
+
+                       <h3 class="heading-small">Or you can send your proof by post</h3>
+
+<p>You can photocopy your proof and send the copy to us. You must include your name and Penalty Charge Reference number <span class="bold">{{ref}}</span>.  </p>
+
+<p>Post a copy of your proof to:</p>
+<p class="panel" style="border:none; padding-top:0">
+                                {% if (ticked == 'K') %}
+        Dental treatment Charges Team<br>
               {% else %}
-        Penalty Charges team<br> 
+        Prescriptions Penalty Charges Team<br> 
             {% endif %}
-          Bridge House<br> 
-          152 Pilgrim Street<br> 
-          Newcastle upon Tyne<br> 
-          NE1 6SN
-        </p>
-      
-      <h2 class="heading-large">What happens next</h2>
+      NHSBSA, Bridge House<br>
+      152 Pilgrim Street<br>
+      Newcastle Upon Tyne <br>
+      NE1 6SN
+      </p>
 
-      <p>
-Once we receive your proof we will check it and then contact you with a response. If you email your proof, we will contact you within 2 working days. If you send it by post, it will be within 5 working days. No additional charges will be added during this time.</p>
+<p>Once we receive your proof by post, we will check it and contact you within 5 working days.</p>
 
-      
-      </div>       
-    </div>
     
+
+      
+    </div>
+    </div>
+  
 </main>
 
 {% endblock %}
