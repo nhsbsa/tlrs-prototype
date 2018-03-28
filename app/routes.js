@@ -719,9 +719,6 @@ router.get(/medical-handler/, function (req, res) {
   } else if (req.query.medical == 'no' && currentUser.gender === 'F'){ 
     res.redirect('pregnant');
     }
-   else if (req.query.medical == 'no' && currentUser.ticked === "D"){ 
-    res.redirect('pregnant');
-      }
        else if (req.query.medical == 'no' && currentUser.ticked === "H"){ 
     res.redirect('proof-of-benefit');
       }
@@ -788,12 +785,25 @@ router.get(/illnesses-handler/, function (req, res) {
   } else {
     currentUser.illness = false;
   }
-  if (currentUser.pregnant == null && currentUser.gender === 'F') {
+  if (req.query.medical == 'no' && currentUser.gender === 'F') {
     res.redirect('pregnant');
   } else {
     res.redirect(outcomeRedirect());
   }
 });
+
+//router.get(/illnesses-handler/, function (req, res) {
+//  if (req.query.medical == 'yes') {
+//    currentUser.illness = true;
+//  } else {
+//    currentUser.illness = false;
+//  }
+//  if (currentUser.pregnant == null && currentUser.gender === 'F') {
+//    res.redirect('pregnant');
+//  } else {
+//    res.redirect(outcomeRedirect());
+//  }
+//});
 
 
 //router.get(/medical-handler/, function (req, res) {
