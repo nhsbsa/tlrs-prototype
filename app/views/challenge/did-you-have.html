@@ -27,8 +27,10 @@
         <div class="heading-group">
           <p>Challenge a Penalty Charge Notice</p>
           <h1 class="heading-large">
-            {% if (cat == 'D') or (cat == 'E') or (cat == 'F') or (cat == 'L') or (cat == 'M') %}
-              Did you have a valid {{title}} 
+            {% if (cat == 'F') or (cat == 'L') or (cat == 'M') %}
+              Did you have a valid {{title}}
+            {% elif  (cat == 'D') or (cat == 'E') %}
+              Did you have a valid NHS {{title}} 
             {% elif (cat == 'H') or (cat == 'I') or (cat == 'K') or (cat == 'S') or (cat == 'U') %}
               Were you claiming {{title}} (or named on a claim)
             {% endif %}

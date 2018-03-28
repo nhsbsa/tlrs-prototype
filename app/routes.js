@@ -408,7 +408,8 @@ router.get(/did-you-have/, function (req, res) {
     title : content.title,
     description : content.description,
     cat : currentUser.ticked,
-    checkdate : content.checkDate
+    checkdate : content.checkDate,
+      certNo : currentUser.certNo
   });
 });
 
@@ -416,6 +417,7 @@ router.get(/did-you-handler/, function (req, res) {
   if (req.query.exemption == 'no') {
     currentUser.removeCat();
     currentUser.showCats();
+      currentUser.certNo = 4;
     res.redirect('bsa-exemptions');
   } else {
     if ( currentUser.benefitTest() ) {
@@ -429,8 +431,9 @@ router.get(/did-you-handler/, function (req, res) {
 router.get('/medical/', function (req, res) {
   res.render('challenge/medical', {
     certNo : currentUser.certNo,
-      ticked : currentUser.ticked
-
+      ticked : currentUser.ticked,
+      gender : currentUser.gender,
+      hasBen : currentUser.hasBen
   });
 });
 
@@ -589,16 +592,48 @@ router.get(/bsa-handler/, function (req, res) {
     }
     content.updateContent(topCat);
   } else {
-    if ( currentUser.benefitTest() && currentUser.gender == 'M' ) {
+    if ( currentUser.benefitTest()) {
       next = 'medical';
-    } else if ( currentUser.benefitTest() && currentUser.gender == 'F' ) {
-        next = 'pregnant';
-    } else {
+    }  else {
       next = 'dwp-exemptions';
     }
   }
   res.redirect(next);
 });
+
+//router.get('/challenge/dwp-exemptions-handler', function (req, res) {
+//  var bens = req.query.benefits;
+//  var nextBens = "medical";
+//  var topCat;
+//  if (bens != "no") {
+//    if (bens == "is" || bens == "esa") {
+//      currentUser.esaH = true;
+//      topCat = "H";
+//        currentUser.hasBen = 1;
+//    } else if (bens == "jsa") {
+//      currentUser.jsaK = true;
+//      topCat = "K";
+//        currentUser.hasBen = 1;
+//    } else if (bens == "pc") {
+//      currentUser.pcS = true;
+//      topCat = "S";
+//        currentUser.hasBen = 1;
+//    } else if (bens == "uc") {
+//      currentUser.uc = true;
+//      topCat = "U";
+//        currentUser.hasBen = 1;
+//    }
+//    content.updateContent(topCat);
+//  }
+//    currentUser.hasBen = 0;
+//  if (currentUser.ticked == "D") {
+//    nextBens = 'pregnant';
+//  }
+//  if (currentUser.uc === true) {
+//    nextBens = 'uc-includes';
+//  }
+//  res.redirect(nextBens);
+//});
 
 router.get('/challenge/dwp-exemptions-handler', function (req, res) {
   var bens = req.query.benefits;
@@ -625,9 +660,6 @@ router.get('/challenge/dwp-exemptions-handler', function (req, res) {
     content.updateContent(topCat);
   }
     currentUser.hasBen = 0;
-  if (currentUser.ticked == "D") {
-    nextBens = 'pregnant';
-  }
   if (currentUser.uc === true) {
     nextBens = 'uc-includes';
   }
@@ -636,29 +668,75 @@ router.get('/challenge/dwp-exemptions-handler', function (req, res) {
 
 
 //new
+//router.get(/pregnancy-handler/, function (req, res) {
+//  if (req.query.pregnant == 'yes') {
+//    currentUser.pregnant = true;
+//    res.redirect(outcomeRedirect());
+//  } else {
+//    currentUser.pregnant = false;
+//    if (currentUser.illness == null) {
+//      res.redirect('medical');
+//    } else {
+//      res.redirect(outcomeRedirect());
+//    }
+//  }
+//});
+
 router.get(/pregnancy-handler/, function (req, res) {
   if (req.query.pregnant == 'yes') {
-    currentUser.pregnant = true;
-    res.redirect(outcomeRedirect());
-  } else {
-    currentUser.pregnant = false;
-    if (currentUser.illness == null) {
-      res.redirect('medical');
-    } else {
-      res.redirect(outcomeRedirect());
+    res.redirect('matex');
+  } else if (req.query.pregnant == 'no' && currentUser.ticked === "K" && currentUser.certNo != 4){ 
+    res.redirect('proof-of-benefit');
     }
-  }
+   else if (req.query.pregnant == 'no' && currentUser.ticked === "H" && currentUser.certNo != 4){ 
+    res.redirect('proof-of-benefit');
+      }
+               else if (req.query.pregnant == 'no' && currentUser.esaH  === true){ 
+    res.redirect('proof-of-benefit');
+      }
+               else if (req.query.pregnant == 'no' && currentUser.jsaK  === true){ 
+    res.redirect('proof-of-benefit');
+      }
+                   else if (req.query.pregnant == 'no' && currentUser.pcS  === true){ 
+    res.redirect('proof-of-benefit');
+      } 
+                   else if (req.query.pregnant == 'no' && currentUser.uc  === true){ 
+    res.redirect('proof-of-benefit');
+      } 
+   else if (req.query.pregnant == 'no' && currentUser.certNo === 3){ 
+    res.redirect('out-of-date');
+    }
+   else if (req.query.pregnant == 'no' && currentUser.certNo === 4){ 
+    res.redirect('cant-find');           
+   } else {
+       res.redirect('cant-find');
+   }
 });
 
 router.get(/medical-handler/, function (req, res) {
   if (req.query.medical == 'yes') {
     res.redirect('illnesses');
-  } else if (req.query.medical == 'no' && currentUser.ticked === "K"){ 
-    res.redirect('proof-of-benefit');
+  } else if (req.query.medical == 'no' && currentUser.gender === 'F'){ 
+    res.redirect('pregnant');
     }
-   else if (req.query.medical == 'no' && currentUser.ticked === "H"){ 
+   else if (req.query.medical == 'no' && currentUser.ticked === "D"){ 
+    res.redirect('pregnant');
+      }
+       else if (req.query.medical == 'no' && currentUser.ticked === "H"){ 
     res.redirect('proof-of-benefit');
-      }  
+      }
+           else if (req.query.medical == 'no' && currentUser.esaH  === true){ 
+    res.redirect('proof-of-benefit');
+      }
+               else if (req.query.medical == 'no' && currentUser.jsaK  === true){ 
+    res.redirect('proof-of-benefit');
+      }
+                   else if (req.query.medical == 'no' && currentUser.pcS  === true){ 
+    res.redirect('proof-of-benefit');
+      } 
+                   else if (req.query.medical == 'no' && currentUser.uc  === true){ 
+    res.redirect('proof-of-benefit');
+      } 
    else if (req.query.medical == 'no' && currentUser.certNo === 3){ 
     res.redirect('out-of-date');
     }
@@ -668,6 +746,25 @@ router.get(/medical-handler/, function (req, res) {
        res.redirect('cant-find');
    }
 });
+
+//router.get(/medical-handler/, function (req, res) {
+//  if (req.query.medical == 'yes') {
+//    res.redirect('illnesses');
+//  } else if (req.query.medical == 'no' && currentUser.ticked === "K"){ 
+//    res.redirect('proof-of-benefit');
+//    }
+//   else if (req.query.medical == 'no' && currentUser.ticked === "H"){ 
+//    res.redirect('proof-of-benefit');
+//      }  
+//   else if (req.query.medical == 'no' && currentUser.certNo === 3){ 
+//    res.redirect('out-of-date');
+//    }
+//   else if (req.query.medical == 'no' && currentUser.certNo === 4){ 
+//    res.redirect('cant-find');           
+//   } else {
+//       res.redirect('cant-find');
+//   }
+//});
 
 //router.get(/medical-handler/, function (req, res) {
 //  if (req.query.medical == 'yes') {
@@ -692,7 +789,7 @@ router.get(/illnesses-handler/, function (req, res) {
     currentUser.illness = false;
   }
   if (currentUser.pregnant == null && currentUser.gender === 'F') {
-    res.redirect('medical');
+    res.redirect('pregnant');
   } else {
     res.redirect(outcomeRedirect());
   }
@@ -1032,7 +1129,8 @@ router.get('/challenge/dwp-exemptions/', function (req, res) {
 // Ask if the user was pregnant or gave birth
 router.get(/pregnant/, function (req, res) {
   res.render('challenge/pregnant', {
-    checkdate : content.checkDate
+    checkdate : content.checkDate,
+      gender : currentUser.gender
   });
 });
 

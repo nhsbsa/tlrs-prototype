@@ -97,8 +97,10 @@
             {% if (hasemail === true) and (hastext === true) %}
              or 
             {% endif %}
-            {% if hastext === true %}
+            {% if (hasemail === false) and (hastext === true) %}
             Phone call
+              {% else %}
+              phone call
             {% endif %}
             {% if (hasemail != true) and (hastext != true) %}
             Post

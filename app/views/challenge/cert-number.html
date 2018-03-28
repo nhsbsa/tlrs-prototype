@@ -28,7 +28,9 @@
     
       <div class="heading-group">
         <p>Challenge a Penalty Charge Notice</p>
-        <h1 class="heading-large">What is your {{title}} number?</h1>
+        <h1 class="heading-large">What is your{% if (ticked == 'D') or (ticked == 'E')%}
+            NHS
+        {% endif %} {{title}} number?</h1>
       </div>
             
       <p>Enter the number on your
