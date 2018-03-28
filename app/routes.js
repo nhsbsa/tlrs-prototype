@@ -706,9 +706,13 @@ router.get(/pregnancy-handler/, function (req, res) {
    else if (req.query.pregnant == 'no' && currentUser.certNo === 3){ 
     res.redirect('out-of-date');
     }
-   else if (req.query.pregnant == 'no' && currentUser.certNo === 4){ 
+                else if (req.query.pregnant == 'no' && currentUser.certNo === 4 && currentUser.ticked === "D"){ 
+    res.redirect('cant-find-mat');           
+   } 
+   else if (req.query.pregnant == 'no' && currentUser.certNo === 4){
     res.redirect('cant-find');           
    } else {
+       
        res.redirect('cant-find');
    }
 });
@@ -740,9 +744,16 @@ router.get(/medical-handler/, function (req, res) {
    else if (req.query.medical == 'no' && currentUser.certNo === 3){ 
     res.redirect('out-of-date');
     }
+
+        else if (req.query.medical == 'no' && currentUser.certNo === 4 && currentUser.ticked === "E"){ 
+    res.redirect('cant-find-med');           
+   } 
    else if (req.query.medical == 'no' && currentUser.certNo === 4){ 
     res.redirect('cant-find');           
-   } else {
+   }    
+
+    
+    else {
        res.redirect('cant-find');
    }
 });
@@ -901,7 +912,8 @@ router.get(/found/, function (req, res) {
 router.get(/out-of-date/, function (req, res) {
   res.render('challenge/out-of-date', {
     title : content.title,
-    checkdate : content.checkDate
+    checkdate : content.checkDate,
+      ticked : currentUser.ticked
   });
 });
 
@@ -1144,6 +1156,22 @@ router.get(/matex/, function (req, res) {
 
 router.get('/challenge/cant-find/', function (req, res) {
   res.render('challenge/cant-find', {
+    checkdate : content.checkDate,
+    certificate : currentUser.matD,
+    pcn : currentUser.pcn
+  });
+});
+
+router.get('/challenge/cant-find-med/', function (req, res) {
+  res.render('challenge/cant-find-med', {
+    checkdate : content.checkDate,
+    certificate : currentUser.matD,
+    pcn : currentUser.pcn
+  });
+});
+
+router.get('/challenge/cant-find-mat/', function (req, res) {
+  res.render('challenge/cant-find-mat', {
     checkdate : content.checkDate,
     certificate : currentUser.matD,
     pcn : currentUser.pcn
