@@ -743,7 +743,7 @@ router.get(/medical-handler/, function (req, res) {
     }
 
         else if (req.query.medical == 'no' && currentUser.certNo === 4 && currentUser.ticked === "E"){ 
-    res.redirect('cant-find-med');           
+    res.redirect('/challenge/end-pages/cannot-find/cant-find-cert');           
    } 
    else if (req.query.medical == 'no' && currentUser.certNo === 4){ 
     res.redirect('cant-find');           
