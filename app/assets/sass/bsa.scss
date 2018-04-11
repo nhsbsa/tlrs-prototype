@@ -794,10 +794,12 @@ table {
 .callout--attention {
     border: 8px solid #0072ce;
 }
+.callout--subtle {
+    background-color: #e6eff8;
+}
 
 .callout {
     padding: 16px;
-    background-color: #fff;
 }
 
 .callout .heading-small {

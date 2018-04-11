@@ -707,7 +707,7 @@ router.get(/pregnancy-handler/, function (req, res) {
     res.redirect('out-of-date');
     }
                 else if (req.query.pregnant == 'no' && currentUser.certNo === 4 && currentUser.ticked === "D"){ 
-    res.redirect('cant-find-mat');           
+    res.redirect('/challenge/end-pages/cannot-find/cant-find-cert');           
    } 
    else if (req.query.pregnant == 'no' && currentUser.certNo === 4){
     res.redirect('cant-find');           
