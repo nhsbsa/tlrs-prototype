@@ -1,0 +1,83 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Pay a Penalty Charge Notice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+  <div class="grid-row">
+    <div class="column-full">
+      <div class="phase-banner">
+        <p>
+          <strong class="phase-tag">BETA</strong>
+          <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-row">
+    
+    <div class="column-two-thirds">
+      
+      {% if certificate == false %}
+      
+      <h1 class="heading-xlarge">
+        This Penalty Charge Notice is on hold for 60 days.
+      </h1>
+            
+      <p>
+        You may have been entitled to a Maternity Exemption Certificate between {{checkdate}}.
+      </p>
+      
+      <h3 class="heading-medium">
+       How to close this Penalty charge Notice
+      </h3>
+      
+      <p>You need to:</p>
+      
+      <ul class="list list-bullet">
+        <li>
+          pay the £8.60 prescription charge
+        </li>
+
+        <li>
+          go to your Midwife and apply for a Maternity Exemption Certificate
+        </li>
+      </ul>
+      
+        <p>
+          We will check our records again after 60 days.
+        </p>
+      
+        <p><a class="button" href="#">Pay the prescription charge now</a></p>
+
+      
+      {% else %}
+
+      <h1 class="heading-xlarge">We can not find your Maternity Exemption Certificate</h1>
+      
+      <p>We can not find your Maternity Exemption Certificate for {{checkdate}}.</p>
+
+      <p>But you may be able to apply for one.</p>
+
+      <h3 class="heading-medium">How to close this Penalty Charge Notice</h3>
+      
+      <p>There are 3 options:</p>
+      
+      <ul class="list list-bullet">
+        <li><a href="">provide proof you had a Maternity Exemption Certificate</a></li>
+        <li><a href="">pay the £8.60 prescription charge, and apply for a Maternity Exemption Certificate</a></li>
+        <li><a href="">pay the total of £51.60.</a> You can pay in one payment or in instalments.</li>
+      </ul>
+      {% endif %}
+    </div>
+    
+  </div>
+
+</main>
+
+{% endblock %}
