@@ -834,14 +834,14 @@ outcomeRedirect = function() {
       if (currentUser.underUCThreshold == false) {
         //over UC threashold but pregnant - need page - should go to /matex for now
         console.log('hit-1');
-        return 'matex';
+        return 'mat-ben';
       }
       console.log('hit-2');
       return 'mat-ben';
     }
     //is pregant only - /matex
     console.log('hit-3');
-    return 'matex';
+    return 'mat-ben';
   }
   //illness
   if (currentUser.illness) {
