@@ -680,11 +680,17 @@ router.get('/challenge/dwp-exemptions-handler', function (req, res) {
 //      res.redirect(outcomeRedirect());
 //    }
 //  }
-//});
+//})
 
+// if type exemption is  esa or jsa and query pregnant redirect to mat-ben
 router.get(/pregnancy-handler/, function (req, res) {
-  if (req.query.pregnant == 'yes') {
+  if (req.query.pregnant == 'yes' && currentUser.esaH === true){ 
+    res.redirect('mat-ben');
+  } else if (req.query.pregnant == 'yes' && currentUser.jsaK === true){ 
+    res.redirect('mat-ben-jsa');
+  } else if (req.query.pregnant == 'yes'){ 
     res.redirect('matex');
+
   } else if (req.query.pregnant == 'no' && currentUser.ticked === "K" && currentUser.certNo != 4){ 
     res.redirect('proof-of-benefit');
     }
@@ -706,14 +712,14 @@ router.get(/pregnancy-handler/, function (req, res) {
    else if (req.query.pregnant == 'no' && currentUser.certNo === 3){ 
     res.redirect('out-of-date');
     }
-                else if (req.query.pregnant == 'no' && currentUser.certNo === 4 && currentUser.ticked === "D"){ 
+    else if (req.query.pregnant == 'no' && currentUser.certNo === 4 && currentUser.ticked === "D"){ 
     res.redirect('/challenge/end-pages/cannot-find/cant-find-cert');           
    } 
    else if (req.query.pregnant == 'no' && currentUser.certNo === 4){
     res.redirect('cant-find');           
    } else {
-       
-       res.redirect('cant-find');
+    
+    res.redirect('cant-find');
    }
 });
 
@@ -722,9 +728,9 @@ router.get(/medical-handler/, function (req, res) {
     res.redirect('illnesses');
   } else if (req.query.medical == 'no' && currentUser.gender === 'F'){ 
     res.redirect('pregnant');
-    }
-       else if (req.query.medical == 'no' && currentUser.ticked === "H"){ 
-    res.redirect('proof-of-benefit');
+    // }
+    //    else if (req.query.medical == 'no' && currentUser.ticked === "H"){ 
+    // res.redirect('proof-of-benefit');
       }
            else if (req.query.medical == 'no' && currentUser.esaH  === true){ 
     res.redirect('proof-of-benefit');
@@ -741,15 +747,12 @@ router.get(/medical-handler/, function (req, res) {
    else if (req.query.medical == 'no' && currentUser.certNo === 3){ 
     res.redirect('out-of-date');
     }
-
-        else if (req.query.medical == 'no' && currentUser.certNo === 4 && currentUser.ticked === "E"){ 
+  else if (req.query.medical == 'no' && currentUser.certNo === 4 && currentUser.ticked === "E"){ 
     res.redirect('/challenge/end-pages/cannot-find/cant-find-cert');           
    } 
    else if (req.query.medical == 'no' && currentUser.certNo === 4){ 
     res.redirect('cant-find');           
    }    
-
-    
     else {
        res.redirect('cant-find');
    }
@@ -834,14 +837,14 @@ outcomeRedirect = function() {
       if (currentUser.underUCThreshold == false) {
         //over UC threashold but pregnant - need page - should go to /matex for now
         console.log('hit-1');
-        return 'mat-ben';
+        return 'matex';
       }
       console.log('hit-2');
       return 'mat-ben';
     }
     //is pregant only - /matex
     console.log('hit-3');
-    return 'mat-ben';
+    return 'matex';
   }
   //illness
   if (currentUser.illness) {
