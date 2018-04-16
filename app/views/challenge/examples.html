@@ -6,6 +6,97 @@
 
 {% block content %}
 
+<style>
+.example-icon-list p {
+    display: inline-block;
+    font-size: 16px;
+    padding-left: 1em;
+    vertical-align: middle;
+    margin-bottom: 0;
+  }
+  .list--check, {
+    list-style: none;
+    padding-left: 32px;
+  }
+  .list--check li::before {
+    background-image:
+  }
+  .standard {
+    vertical-align: middle;
+    padding: 0;
+    counter-reset: standard-counter;
+  }
+  .standard>li::before {
+    width: 10%;
+  }
+  .standard>li {
+    list-style: none;
+    display: block;
+    border-top: 1px solid #bfc1c3;
+    padding: 1em 0 0.5em 0;
+    margin: 0;
+    page-break-inside: avoid;
+  }
+  .updated-standard li .point {
+    width: 67%;
+  }
+  .standard>li .point {
+    padding-left: 3em
+  }
+  .standard>li .point {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  .circle-step {
+    min-width: 36px;
+    min-height: 38px;
+    line-height: 36px;
+  }
+  .circle {
+    display: inline-block;
+    border-radius: 50%;
+    background: #0b0c0c;
+    color: #fff;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    margin: 0em;
+  }
+  .panel_side {
+    display: block;
+    padding-top: 15px;
+    background-color: #DEE0E2;
+  }
+  .panel_side_inner {
+    width: auto;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 5px;
+  }
+  .display_field {
+    margin-bottom: 20px;
+    display: block;
+  }
+  .display_field_value h3 {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    text-transform: none;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  .income-img {
+    width: 283px;
+  }
+  @media(max-width:640px) {
+    .income-img {
+      width: 100%
+    }
+  }
+</style>
+
 <main id="content" role="main">
     
 
@@ -25,35 +116,182 @@
     <div class="grid-row">
     
     <div class="column-two-thirds">
+        
+        <h1 class="heading-large">We need proof that you were entitled to claim {% if (ticked == 'K') %}
+        <a href="#">free or reduced cost dental treatment</a>
+              {% else %}
+        <a href="#">free prescriptions</a>
+            {% endif %} between 1 November and 30 November 2017</h1>
          
-    <h1 class="heading-large">Examples of proof you can send us</h1>
+<!--    <h1 class="heading-large">Examples of proof for NHS exemptions</h1>-->
         
-                <h1 class="heading-small">A clear scan or photographed image of an exemption certificate card, if you have one</h1>
+        <div class="panel panel-border-wide">
+  <p>
+    You now have 14 days from today to send us your proof.
+  </p>
+</div>
         
-              <img src="/public/images/prototypes/challenge/Exemption-01.jpg" alt="Example of a jsa letter" width="600" height="400">
+        <h3 class="heading-medium" style="margin-top: 2em">Type of proof we need to see</h3>
         
-                        <h1 class="heading-small"><br>A letter from the Job Centre, that confirms the type of allowance, the amount you received and the dates you were receiving it between</h1>
-      
-      <img src="/public/images/prototypes/challenge/jsa3-04.png" alt="Example of a jsa letter" width="500" height="570">
+        <p>We need to see just one example of proof from the following list. Your proof must have been valid at the time you claimed a free prescription.</p>
+        
+        <p>Click on the links below to find out what you need to send:</p>
+        
+        <p><span class="strong">Award letter</span></p>
+        
+             <details>
+        <summary><span class="summary">Income-based Jobseeker's Allowance</span></summary>
+        <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+<p>A clear scan or photograph of your Income-based Jobseeker's Allowance award letter. It's important that the type of Jobseeker's Allowance is clearly visible.</p>
+                                          <img src="/public/images/prototypes/challenge/jsa-contribution-letter2.png" alt="Example of an allowance award letter with the type of Jobseeker's Allowance clearly visible" width="100%">
+        </div>
+    </details>
+        
+    <details>
+        <summary><span class="summary">Income Support or income-related Employment and Support Allowance</span></summary>
+        <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+            <p>A clear scan or photograph of your Income Support or income-related Employment and Support Allowance award letter. It's important that your income related entitlement is clearly visible.</p>
+            <img src="/public/images/prototypes/challenge/esa-income-letter2.png" alt="Example of an allowance award letter with the income related entitlement clearly visible" width="100%">
+        </div>
+    </details>
+        
+                    <details>
+        <summary><span class="summary">Pension Credit Guarantee Credit</span></summary>
+        <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+            <p>A clear scan or photograph of you or your partner’s Pension Credit Guarantee Credit award letter.</p>
+<!--            <img src="/public/images/prototypes/challenge/esa-income-letter2.png" alt="Example of an maternity exemption certificate card in its entirety with all details displayed clearly" width="100%">-->
+        </div>
+    </details>
+        
+        <br>
+        
+        <p><span class="strong">NHS certificate</span></p>
+        
+    <details>
+        <summary><span class="summary">Medical exemption</span></summary>
+        <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+            <p>A clear scan or photographed image of your exemption certificate card</p>
+            <img src="/public/images/prototypes/challenge/MedexCard.jpg" alt="Example of an exemption certificate card in its entirety with all details displayed clearly" width="50%">
+
+        </div>
+    </details>
+        
+    <details>
+        <summary><span class="summary">Maternity exemption</span></summary>
+        <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+            <p>A clear scan or photographed image of your exemption certificate card</p>
+            <img src="/public/images/prototypes/challenge/MatexCard.jpg" alt="Example of an exemption certificate card in its entirety with all details displayed clearly" width="50%">
+                        <p>A clear screenshot or photographed image of your digital exemption certificate on your mobile device, laptop, or desktop computer</p>
+            <img src="/public/images/prototypes/challenge/MatexPhone.jpg" alt="Example of a clear screenshot or photographed image of a digital exemption certificate on a mobile device" width="50%">
+        </div>
+    </details>
+        
+            <details>
+        <summary><span class="summary">HC2 certificate</span></summary>
+        <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+            <p>A clear scan or photographed image of your HC2 certificate. It's important that the cert no, valid from, valid until, and for fields are all clearly visible.</p>
+            <img src="/public/images/prototypes/challenge/HC2.jpg" alt="Example of an HC2 certificate in its entirety with the cert no, valid from, valid until, and for fields displayed clearly" width="60%">
+        </div>
+    </details>
+        
+                    <details>
+        <summary><span class="summary">NHS tax credit exemption</span></summary>
+        <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+                        <p>A clear scan or photographed image of your exemption certificate card</p>
+            <img src="/public/images/prototypes/challenge/TaxCreditCard.jpg" alt="Example of an exemption certificate card in its entirety with all details displayed clearly" width="50%">
+            <p>A clear scan or photographed image of your exemption certificate letter</p>
+            <img src="/public/images/prototypes/challenge/TaxCreditpaper.jpg" alt="Example of an NHS tax credit exemption certificate letter in its entirety with all details displayed clearly" width="50%">
+        </div>
+    </details>
+        
+            <details>
+        <summary><span class="summary">Prescription prepayment certificate (PPC)</span></summary>
+        <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+                        <p>A clear scan or photographed image of your exemption certificate card</p>
+            <img src="/public/images/prototypes/challenge/MedexCard.jpg" alt="Example of an exemption certificate card in its entirety with all details displayed clearly" width="50%">
+                                    <p>A clear screenshot or photographed image of your digital exemption certificate on your mobile device, laptop, or desktop computer</p>
+            <img src="/public/images/prototypes/challenge/PPCphone.jpg" alt="Example of a clear screenshot or photographed image of a digital exemption certificate on a mobile device" width="50%">
+        </div>
+    </details>
         
           
-        <h1 class="heading-small"><br>The first page of your JSA letter, that has your name and address, and the last page with the type of allowance, the amount you received and the date you were receiving it from</h1>
-      
-      <img src="/public/images/prototypes/challenge/jsa1-01.png"alt="Example of a jsa letter" width="500" height="570">
+<h3 class="heading-medium" style="margin-top: 2em">How to send your proof</h3>
+<h4 class="heading-small">It’s as easy as sending a photo on your phone
+</h4>
+                <ol class="standard">
+                    <li style="border-top: none;">
+                        <span class="circle circle-step">1</span>
+                        <div class="point">
+                            <p>Take a photo of your proof using a mobile phone or digital camera.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="circle circle-step" style="">2</span>
+                        <div class="point">
+                            <p>Check the image is clear and you can read the information.</p> 
+                        </div>
+                    </li>
+                    <li>
+                        <span class="circle circle-step" style="margin-top:0.8em">3</span>
+                        <div class="point">
+                            <p>Send the photo as an email attachment to: {% if (ticked == 'K') %}
+        <a href="#">nhsbsa.decs@nhsbsa.nhs.uk</a>
+              {% else %}
+        <a href="#">nhsbsa.pecs@nhsbsa.nhs.uk</a>
+            {% endif %}<br><br> You must include your name and Penalty Charge Reference number <span class="strong">{{ref}}</span>. </p>
+                            <p>We need to be able to confirm your identity, so your email must also include your:</p>
+                                    <ul class="list list-bullet">
+<li>First name and surname (family name)</li>
+<li>Date of birth</li>
+            <li>Address including postcode </li>
+</ul>
+
+                        </div>
+                    </li>
+                    <li>
+                        <span class="circle circle-step">4</span>
+                        <div class="point">
+                            <p>Once we receive your email with your proof, we will check it and contact you within 2 working days.
+<br></p>
+                        </div>
+                    </li>
+                </ol>
+
+
+                       <h3 class="heading-small">Or you can send your proof by post</h3>
         
-<img src="/public/images/prototypes/challenge/jsa2-02.png"alt="Example of a jsa letter" width="500" height="570">
-      
+<p>If you don’t have access to a digital camera you can photocopy your proof and send the copy to us. You must also include the following information:</p>
+        
+        <ul class="list list-bullet">
+<li>Your Penalty Charge Notice reference number {{ref}}</li>
+<li>First name and surname (family name)</li>
+<li>Date of birth</li>
+            <li>Address including postcode </li>
+</ul>
+
+<p>Post a copy of your proof to:</p>
+<p class="panel" style="border:none; padding-top:0">
+                                      {% if (ticked == 'K') %}
+        Dental treatment Charges Team<br>
+              {% else %}
+        Prescriptions Penalty Charges Team<br> 
+            {% endif %}
+      NHSBSA, Bridge House<br>
+      152 Pilgrim Street<br>
+      Newcastle Upon Tyne <br>
+      NE1 6SN
+      </p>
+
+<p>Once we receive your proof by post, we will check it and contact you within 5 working days.</p>
+
         
 
-                <h1 class="heading-small"><br>The first page of your UC letter, that has your name and address, and the second page with the amount you received and the date you received it from</h1>
-        
-<img src="/public/images/prototypes/challenge/uc1-05.png"alt="Example of a UC letter" width="500" height="570">
-        
-<img src="/public/images/prototypes/challenge/uc-03.png"alt="Example of a UC letter" width="500" height="570">
-            
-      </div>       
+
+      
     </div>
-    
+    </div>
+  
 </main>
+
 
 {% endblock %}

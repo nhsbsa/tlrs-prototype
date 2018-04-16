@@ -1138,7 +1138,8 @@ router.get(/proof-of-benefit/, function (req, res) {
     checkdate : content.checkDate,
       exemption : content.exemption,
       title : content.title,
-      chosenBen : content.chosenBen
+      chosenBen : content.chosenBen,
+      ticked : currentUser.ticked
   });
 });
 

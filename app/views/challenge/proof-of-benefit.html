@@ -119,10 +119,16 @@
         
         <p>Challenge a Penalty Charge Notice</p>
         
-        <h1 class="heading-large">We need proof you were receiving {{chosenBen}} between {{checkdate}}.
+        <h1 class="heading-large">We need proof you were receiving {{chosenBen}} between {{checkdate}}
 </h1>
         
       </div>
+        
+                                <div class="panel panel-border-wide">
+  <p>
+    You now have 14 days from today to send us your proof.
+  </p>
+</div>
         
         <h2 class="heading-medium">Type of proof we need to see</h2>
         <p>We need a copy of one of the following:</p>
@@ -132,17 +138,6 @@
 <li>a letter from the Jobcentre</li>
 </ul>
 
-<details>
-              <summary><span class="summary">Check which types of proof are accepted</span></summary>
-                <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
-<p>PUT IMAGE HERE</p>
-
-
-              </div>
-            </details>
-<h3 class="heading-medium" style="margin-top: 2em">Your deadline</h3>
-            <p>Your Penalty Charge Notice deadline will be extended by 14 days while you send us your proof. Don't delay.</p>
-
 <h3 class="heading-medium" style="margin-top: 2em">How to send your proof</h3>
 <h4 class="heading-small">It’s as easy as sending a photo on your phone
 </h4>
@@ -151,6 +146,20 @@
                         <span class="circle circle-step">1</span>
                         <div class="point">
                             <p>Take a photo of your proof using a mobile phone or digital camera.</p>
+                            
+                                                {% if (ticked == 'K') %}
+                            <p>It's important that the type of Jobseeker's Allowance is clearly visible in the photo.</p>
+                                                  <img src="/public/images/prototypes/challenge/jsa-contribution-letter2.png" alt="Example of an maternity exemption certificate card in its entirety with all details displayed clearly" width="100%">
+              {% elseif (ticked == 'H') %}
+                            <p>It's important that your income related entitlement is clearly visible in the photo.</p>
+<img src="/public/images/prototypes/challenge/esa-income-letter2.png" alt="Example of an maternity exemption certificate card in its entirety with all details displayed clearly" width="100%">
+                                  {% elseif (ticked == 'I') %}
+                            <p>It's important that your income related entitlement is clearly visible in the photo.</p>
+<img src="/public/images/prototypes/challenge/esa-income-letter2.png" alt="Example of an maternity exemption certificate card in its entirety with all details displayed clearly" width="100%">
+                    {% else %}
+                    <p>Place content here</p>
+            {% endif %}
+                            
                         </div>
                     </li>
                     <li>
@@ -166,7 +175,13 @@
         <a href="#">nhsbsa.decs@nhsbsa.nhs.uk</a>
               {% else %}
         <a href="#">nhsbsa.pecs@nhsbsa.nhs.uk</a>
-            {% endif %}<br><br>You must include your name and Penalty Charge Reference number <span class="strong">{{ref}}</span>. </p>
+            {% endif %}<br><br>You must include your Penalty Charge Reference number <span class="strong">{{ref}}</span>. </p>
+                            <p>We need to be able to confirm your identity, so your email must also include your:</p>
+                                    <ul class="list list-bullet">
+<li>First name and surname (family name)</li>
+<li>Date of birth</li>
+            <li>Address including postcode </li>
+</ul>
 
                         </div>
                     </li>
@@ -181,8 +196,15 @@
 
 
                        <h3 class="heading-small">Or you can send your proof by post</h3>
-
-<p>You can photocopy your proof and send the copy to us. You must include your name and Penalty Charge Reference number <span class="bold">{{ref}}</span>.  </p>
+        
+<p>If you don’t have access to a digital camera you can photocopy your proof and send the copy to us. You must also include the following information:</p>
+        
+        <ul class="list list-bullet">
+<li>Your Penalty Charge Notice reference number {{ref}}</li>
+<li>First name and surname (family name)</li>
+<li>Date of birth</li>
+            <li>Address including postcode </li>
+</ul>
 
 <p>Post a copy of your proof to:</p>
 <p class="panel" style="border:none; padding-top:0">

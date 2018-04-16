@@ -46,7 +46,7 @@
             </div> 
           {% endif %}
           
-          {% if (ticked != "E") %}
+          {% if (ticked != "E") and (ticked != "K") %}
             <div class="multiple-choice single-line">
               <input type="radio" id="med" value="med" name="bsa">
               <label class="form-control-radio minor-checkbox" for="med">
@@ -55,7 +55,7 @@
             </div>
           {% endif %}
           
-          {% if (ticked != "F") %}
+          {% if (ticked != "F") and (ticked != "K") %}
             <div class="multiple-choice single-line">
               <input type="radio" id="ppc" value="ppc" name="bsa">
               <label class="form-control-radio minor-checkbox" for="ppc">
@@ -63,12 +63,22 @@
               </label>
             </div>
           {% endif %}
+            
           
           {% if (ticked != "L") %}
             <div class="multiple-choice single-line">
               <input type="radio" id="hc2" value="hc2" name="bsa">
               <label class="form-control-radio minor-checkbox" for="hc2">
                 HC2 certificate (full help with health costs)
+              </label>
+            </div>
+          {% endif %}
+            
+                                  {% if (ticked === "K") %}
+            <div class="multiple-choice single-line">
+              <input type="radio" id="ppc" value="ppc" name="bsa">
+              <label class="form-control-radio minor-checkbox" for="ppc">
+                HC3 certificate (limited help with health costs)
               </label>
             </div>
           {% endif %}
