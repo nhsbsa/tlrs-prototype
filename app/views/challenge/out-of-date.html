@@ -14,10 +14,12 @@
     
       <div class="heading-group">
         <p>Challenge a Penalty Charge Notice</p>
-        <h1 class="heading-large">
-          Your {{title}} expired on 1 September 2017.        
+        <h1 class="heading-xlarge">
+          Your exemption certificate was not valid at the time you claimed       
         </h1>
       </div>
+        
+        <p>This may have been because your certificate had expired or you hadn’t got the certificate in time.</p>
 
       <h2 class="heading-medium">What to do next</h2>
 
@@ -30,8 +32,8 @@
         Send us proof to show that you were entitled to {% if (ticked == 'K') %}
             free or reduced cost dental treatment
           {% else %}
-        free prescriptions
-          {% endif %} or had a valid {{title}} between 1 November and 30 November 2017.
+        free NHS prescriptions
+          {% endif %} or had a valid prescription prepayment certificate between 1 November and 30 November 2017.
         <br>
          <form action="examples" method="get" class="form">
         <div class="form-group" style="margin-top:0.5em">
@@ -52,7 +54,11 @@
             free or reduced cost dental treatment
           {% else %}
         free prescriptions
-          {% endif %} but have an exceptional reason why you made the claim, you can ask us to review your Penalty Charge Notice.<a href="">Find out if you can ask for a review</a>
+          {% endif %} but have an exceptional reason why you made the claim, you can ask us to review your Penalty Charge Notice. <a href="">Find out if you can ask for a review</a>
+    
+          <ul class="list options-list">
+        <li><a class="icon print-icon" href="javascript:window.print();">Print this page</a></li>
+      </ul>
 
       
       </div>
